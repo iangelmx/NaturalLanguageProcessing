@@ -1,5 +1,7 @@
+
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 import nltk
 from nltk.corpus import swadesh
 from nltk.corpus import wordnet as wordNet
@@ -34,7 +36,6 @@ for synset in a:
 	print( synset.lemma_names())
 """
 
-
 female_names = names.words('female.txt')
 #print(female_names)
 
@@ -52,6 +53,7 @@ print("\nIDIOMAS: "+str(wordNet.langs())+"\n")
 print(wordNet.synsets('jugar', lang='spa'))
 
 vero = wordNet.synsets('jugar', lang='spa')
+
 
 vero = wordNet.synsets('computer')
 print(vero)
@@ -78,3 +80,14 @@ print("grupoSemantico"+str(grupoSemantico))
 a=wordNet.synsets('car')
 for synset in a:
 	print( synset.lemma_names())
+
+for palabras in vero:
+	for palabra in palabras.lemma_names():
+		print("Palabra-> "+str(traductor(palabra))+ "\t")
+
+
+
+a=wordNet.synsets('car')
+for synset in a:
+	print( synset.lemma_names())
+
