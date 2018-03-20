@@ -1,31 +1,15 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from __future__ import division
 import os
 import nltk, re, pprint
 from urllib.request import *
 from bs4 import BeautifulSoup
 import feedparser
-#import functionsNLP
+from functionsNLP import *
 url="http://www.gutenberg.org/files/2554/2554-0.txt"
 #url="http://www.gutenberg.org/files/2554/2554.txt"
-
-def separaPorOraciones(cadena):
-	sent_tokenizer = nltk.data.load("nltk:tokenizers/punkt/english.pickle")
-	listaOraciones=sent_tokenizer.tokenize(cadena)
-	return listaOraciones
-
-def getTextTokens(rutaArchivo, keepNumbers=False, backTextString=False):	#Una manera que se me ocurrió de tokenizar. Es precisa en un 96.35%
-	ruta=rutaArchivo
-	#print("ruta->"+str(ruta))
-	entrada= open(rutaArchivo, mode="r", encoding="utf-8")
-	abc=entrada.read()
-	abc=abc.lower()
-	tokens = nltk.tokenize.word_tokenize(str(abc))
-	if keepNumbers == False:
-		alphatokens = [word for word in tokens if word.isalpha()]
-		tokens=alphatokens				#Libera los tokens de números y símbolos raros
-		if backTextString == True:
-			return [tokens, abc]
-	return tokens
 
 texto="Hola a todos. ¿Cómo se encuentran el día de hoy?. Espero que muy bien, ya que yo estoy muy contento de verlos."
 print(separaPorOraciones(texto))
@@ -46,10 +30,11 @@ print(tokens[:10])
 [tokens, cadena] = getTextTokens("e960401_txt.txt", backTextString=True)
 
 text=nltk.Text(tokens)
-raw = cadena.encode('utf8')
+#raw = unicode(cadena, "utf-8")
+raw = cadena.encode("utf-8")
 text.collocations()
 print("")
-lista = separaPorOraciones(raw)
+lista = separaPorOraciones(cadena)
 
 for elemento in lista:
 	print(elemento)
