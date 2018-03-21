@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import operator
 from functionsNLP import *
+from mariamysqlib import *
 import math
 
 def getJointProbability(palabra1, palabra2, listaOraciones):
@@ -94,14 +95,23 @@ input("Lectura finalizada")"""
 
 archivo = open("SALIDA.txt", "w")
 archivo.write("Gobierno...\n")
-
-listaDictOrdenado = sorted(diccionarioMI.items(), key=operator.itemgetter(1))
-
-for a in range (len(listaDictOrdenado)-1, 0,-1):
+#-----------------------------
+#listaDictOrdenado = sorted(diccionarioMI.items(), key=operator.itemgetter(1))
+"""for a in range (len(listaDictOrdenado)-1, 0,-1):
+	transaccion+="INSERT into MutualInformation (token, valor) VALUES('"+str(listaDictOrdenado[a][0])+"', "+str(listaDictOrdenado[a][1])+");\n"
 	archivo.write(str(listaDictOrdenado[a][0])+"\t:\t"+str(listaDictOrdenado[a][1])+"\n" )
 	#archivo.write(elemento+" : "+str(MI[elemento])+"\n")
+archivo.close()"""
+#-----------------------------
+transaccion = "START TRANSACTION;\n"
+
+for elemento in diccionarioMI:
+	transaccion+="INSERT into MutualInformation (token, valor) VALUES('"+elemento+"', "+str(diccionarioMI[elemento])+"); \n"	
+	archivo.write(elemento+" : "+str(diccionarioMI[elemento])+"\n")
+transaccion +="COMMIT;"
 archivo.close()
 
+doQuery(transaccion)
 print("Proceso finalizado")
 
 
