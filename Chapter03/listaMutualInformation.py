@@ -6,6 +6,7 @@ from mariamysqlib import *
 import math
 from decimal import *
 
+#Entropía, de una palabra, entre más grande sea, más dificil de predecir.
 def getJointProbability(palabra1, palabra2, listaOraciones):
 	conteoW1=0
 	conteoW2=0
@@ -18,9 +19,9 @@ def getJointProbability(palabra1, palabra2, listaOraciones):
 			conteoW2+=1
 		if palabra1 and palabra2 in oracion:
 			conteoW1W2+=1
-	pXw1 = (conteoW1) / (N)
-	pXw2 = (conteoW2) / (N)
-	pXw1w2 = (conteoW1W2) / (N)
+	pXw1 = (conteoW1 + 0.5) / (N+1)
+	pXw2 = (conteoW2 + 0.5) / (N+1)
+	pXw1w2 = (conteoW1W2 + 0.25) / (N+1)
 	return [pXw1, pXw2,pXw1w2]
 
 def getMutualInformationOfGobierno(precision=False):
@@ -35,7 +36,8 @@ def getMutualInformationOfGobierno(precision=False):
 		p_w20 = 1- p_w21
 		
 		p_w10_w21 = p_w21 - p_w11_w21
-		p_w10_w20 = p_w20 - p_w10_w21
+		#p_w10_w20 = p_w20 - p_w10_w21
+		p_w10_w20 = p_w10 - p_w10_w21
 		p_w11_w20 = p_w20 - p_w10_w20
 
 		p = {}
@@ -92,7 +94,7 @@ listaOraciones = separaPorOraciones(textoCompleto)
 
 #Palabra base= "gobierno"
 precision=False
-diccionarioMI=getMutualInformationOfGobierno(precision=True)
+diccionarioMI=getMutualInformationOfGobierno()
 """
 entrada = open("SALIDA.txt", "r")
 linea = entrada.readline()
@@ -113,14 +115,14 @@ while linea != '':
 input("Lectura finalizada")"""
 
 
-archivo = open("SALIDA_Precisa.txt", "w")
+archivo = open("SALIDA_Precisa_gob.txt", "w")
 archivo.write("Gobierno...\n")
 transaccion = "START TRANSACTION;\n"
 
 #-----------------------------
 listaDictOrdenado = sorted(diccionarioMI.items(), key=operator.itemgetter(1))
 for a in range (len(listaDictOrdenado)-1, 0,-1):
-	transaccion+="INSERT into MutualInformationCad (token, valor) VALUES('"+str(listaDictOrdenado[a][0])+"', "+str(listaDictOrdenado[a][1])+");\n"
+	transaccion+="INSERT into MutualInformationCad (token, valor) VALUES('"+str(listaDictOrdenado[a][0])+"', '"+str(listaDictOrdenado[a][1])+"');\n"
 	archivo.write(str(listaDictOrdenado[a][0])+"\t:\t"+str(listaDictOrdenado[a][1])+"\n" )
 	#archivo.write(elemento+" : "+str(MI[elemento])+"\n")
 archivo.close()
@@ -130,7 +132,9 @@ archivo.close()
 for elemento in diccionarioMI:
 	#transaccion+="INSERT into MutualInformation (token, valor) VALUES('"+elemento+"', "+str(diccionarioMI[elemento])+"); \n"	
 	archivo.write(elemento+" : "+str(diccionarioMI[elemento])+"\n")"""
-transaccion +="COMMIT;"
+transaccion +="COMMIT;\n"
+transaccion += "//"
+
 #print(transaccion)
 #archivo.close()
 
