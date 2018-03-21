@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+import operator
 from functionsNLP import *
 import math
 
@@ -71,21 +71,38 @@ listaOraciones = separaPorOraciones(textoCompleto)
 
 #Palabra base= "gobierno"
 
-#diccionarioMI=getMutualInformationOfGobierno()
+diccionarioMI=getMutualInformationOfGobierno()
+
+entrada = open("SALIDA.txt", "r")
+linea = entrada.readline()
+linea = entrada.readline()
+
+"""MIin={}
+a=0
+while linea != '':
+	[key, value] = linea.split(":")
+	key=key.replace(' ','')
+	value=value.replace(' ','')
+	MIin[key]=value
+	linea=entrada.readline()
+	a+=1
+	if a > 7900:
+		print(linea)
+
+input("Lectura finalizada")"""
 
 
-
-"""
 archivo = open("SALIDA.txt", "w")
 archivo.write("Gobierno...\n")
 
-for elemento in MI:
-	archivo.write(elemento+" : "+str(MI[elemento])+"\n")
+listaDictOrdenado = sorted(diccionarioMI.items(), key=operator.itemgetter(1))
+
+for a in range (len(listaDictOrdenado)-1, 0,-1):
+	archivo.write(str(listaDictOrdenado[a][0])+"\t:\t"+str(listaDictOrdenado[a][1])+"\n" )
+	#archivo.write(elemento+" : "+str(MI[elemento])+"\n")
 archivo.close()
 
 print("Proceso finalizado")
-"""
-
 
 
 
