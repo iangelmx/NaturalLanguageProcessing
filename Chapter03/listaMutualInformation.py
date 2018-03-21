@@ -4,6 +4,7 @@ import operator
 from functionsNLP import *
 from mariamysqlib import *
 import math
+from decimal import *
 
 def getJointProbability(palabra1, palabra2, listaOraciones):
 	conteoW1=0
@@ -22,7 +23,7 @@ def getJointProbability(palabra1, palabra2, listaOraciones):
 	pXw1w2 = (conteoW1W2) / (N)
 	return [pXw1, pXw2,pXw1w2]
 
-def getMutualInformationOfGobierno():
+def getMutualInformationOfGobierno(precision=False):
 	MI={}
 	a=0
 
@@ -47,19 +48,38 @@ def getMutualInformationOfGobierno():
 		p['w20']= p_w20
 		p['w21']= p_w21
 
-		try:
-			for u in range (0, 2):
-				for v in range (0, 2):
-					#print('w1'+str(u)+'w2'+str(v)+" * log2("+'w1'+str(u)+'w2'+str(v)+" / "+'w1'+str(u)+" * "+'w2'+str(v)+" )")
-					MI[palabra]= p['w1'+str(u)+'w2'+str(v)] * ( math.log2( (p['w1'+str(u)+'w2'+str(v)])/( (p['w1'+str(u)])*(p['w2'+str(v)]) ) ) )
-					#print("MI['"+palabra+"'] = "+str(MI[palabra]))
-		except Exception as ex:
-			#print(ex)
-			pass
+		if precision == False:
+			try:
+				for u in range (0, 2):
+					for v in range (0, 2):
+						#print('w1'+str(u)+'w2'+str(v)+" * log2("+'w1'+str(u)+'w2'+str(v)+" / "+'w1'+str(u)+" * "+'w2'+str(v)+" )")
+						MI[palabra] = p['w1'+str(u)+'w2'+str(v)] * (math.log2( (p['w1'+str(u)+'w2'+str(v)])/( (p['w1'+str(u)])*(p['w2'+str(v)]) ) ) )
+
+						#print("MI['"+palabra+"'] = "+str(MI[palabra]))
+			except Exception as ex:
+				#print(ex)
+				pass
+		else:
+			try:
+				for u in range (0, 2):
+					for v in range (0, 2):
+						#print('w1'+str(u)+'w2'+str(v)+" * log2("+'w1'+str(u)+'w2'+str(v)+" / "+'w1'+str(u)+" * "+'w2'+str(v)+" )")
+						#resul = p['w1'+str(u)+'w2'+str(v)] * (math.log2( (p['w1'+str(u)+'w2'+str(v)])/( (p['w1'+str(u)])*(p['w2'+str(v)]) ) ) )
+						MI[palabra]= Decimal(p['w1'+str(u)+'w2'+str(v)]) * ( (Decimal((p['w1'+str(u)+'w2'+str(v)])).log10() / Decimal(2).log10()) / (Decimal( ( (p['w1'+str(u)])*(p['w2'+str(v)]) ) ).log10() / Decimal(2).log10()) ) #( math.log2( (p['w1'+str(u)+'w2'+str(v)])/( (p['w1'+str(u)])*(p['w2'+str(v)]) ) ) )
+						#print("MI['"+palabra+"'] = "+str(MI[palabra]))
+			except Exception as ex:
+				#print(ex)
+				pass
+
+				
 		a+=1
 		if a%5000 == 0:
 			print("Working Hard. A-> "+str(a))
-			print("MI['"+palabra+"'] = "+str(MI[palabra]))
+			if precision == False:
+				print(palabra+" : "+str(MI[palabra]))
+			else:
+				print("MI['"+palabra+"'] = "+str(MI[palabra]))
+			
 
 	return MI
 
@@ -71,14 +91,14 @@ rutaArchivo="e960401_txt.txt"
 listaOraciones = separaPorOraciones(textoCompleto)
 
 #Palabra base= "gobierno"
-
-diccionarioMI=getMutualInformationOfGobierno()
-
+precision=False
+diccionarioMI=getMutualInformationOfGobierno(precision=True)
+"""
 entrada = open("SALIDA.txt", "r")
 linea = entrada.readline()
 linea = entrada.readline()
 
-"""MIin={}
+MIin={}
 a=0
 while linea != '':
 	[key, value] = linea.split(":")
@@ -93,25 +113,28 @@ while linea != '':
 input("Lectura finalizada")"""
 
 
-archivo = open("SALIDA.txt", "w")
+archivo = open("SALIDA_Precisa.txt", "w")
 archivo.write("Gobierno...\n")
-#-----------------------------
-#listaDictOrdenado = sorted(diccionarioMI.items(), key=operator.itemgetter(1))
-"""for a in range (len(listaDictOrdenado)-1, 0,-1):
-	transaccion+="INSERT into MutualInformation (token, valor) VALUES('"+str(listaDictOrdenado[a][0])+"', "+str(listaDictOrdenado[a][1])+");\n"
-	archivo.write(str(listaDictOrdenado[a][0])+"\t:\t"+str(listaDictOrdenado[a][1])+"\n" )
-	#archivo.write(elemento+" : "+str(MI[elemento])+"\n")
-archivo.close()"""
-#-----------------------------
 transaccion = "START TRANSACTION;\n"
 
-for elemento in diccionarioMI:
-	transaccion+="INSERT into MutualInformation (token, valor) VALUES('"+elemento+"', "+str(diccionarioMI[elemento])+"); \n"	
-	archivo.write(elemento+" : "+str(diccionarioMI[elemento])+"\n")
-transaccion +="COMMIT;"
+#-----------------------------
+listaDictOrdenado = sorted(diccionarioMI.items(), key=operator.itemgetter(1))
+for a in range (len(listaDictOrdenado)-1, 0,-1):
+	transaccion+="INSERT into MutualInformationCad (token, valor) VALUES('"+str(listaDictOrdenado[a][0])+"', "+str(listaDictOrdenado[a][1])+");\n"
+	archivo.write(str(listaDictOrdenado[a][0])+"\t:\t"+str(listaDictOrdenado[a][1])+"\n" )
+	#archivo.write(elemento+" : "+str(MI[elemento])+"\n")
 archivo.close()
+#-----------------------------
 
-doQuery(transaccion)
+"""
+for elemento in diccionarioMI:
+	#transaccion+="INSERT into MutualInformation (token, valor) VALUES('"+elemento+"', "+str(diccionarioMI[elemento])+"); \n"	
+	archivo.write(elemento+" : "+str(diccionarioMI[elemento])+"\n")"""
+transaccion +="COMMIT;"
+#print(transaccion)
+#archivo.close()
+
+print(doQuery(transaccion))
 print("Proceso finalizado")
 
 
