@@ -80,7 +80,6 @@ def insertInDB(table, parameters, values, trace=True):#Inserta un nuevo elemento
 	myConnection.close()
 	return result"""
 
-
 def doQuery( myQuery) :
 	myConnection =pymysql.connect( host=hostname, user=username, passwd=password, db=database,charset='utf8' )	#Crear la conexión con la BD
 	cur = myConnection.cursor()
@@ -90,3 +89,18 @@ def doQuery( myQuery) :
 	myConnection.commit()
 	myConnection.close()
 	return result
+
+def doTransaction(queriesList):
+	print("Se iniciará la transacción...")
+	try:
+		myConnection =pymysql.connect( host=hostname, user=username, passwd=password, db=database,charset='utf8' )	#Crear la conexión con la BD
+		cur = myConnection.cursor()
+		for query in queriesList:
+			cur.execute(query)
+		print("Transacción armada.\nSe ejecutará...")
+		myConnection.commit()
+		myConnection.close()
+		result=cur.fetchall()
+		return "Transacción finalizada con éxito"
+	except:
+		return "Error en la transacción"
