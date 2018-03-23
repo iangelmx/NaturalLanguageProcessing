@@ -39,8 +39,8 @@ def existsInDB(table,params,values):#Checa si existe un elemento con un valor va
 	if str(amount[0][0])=="0":#Si no existe
 		return False
 	return True	#Si existe
-def insertInDB(table, parameters, values):#Inserta un nuevo elemento en la BD, los parametros van en forma de lista al igua que los valores regra
-	myConnection =pymysql.connect( host=hostname, user=username, passwd=password, db=database )	#Crear la conexión con la BD
+def insertInDB(table, parameters, values, trace=True):#Inserta un nuevo elemento en la BD, los parametros van en forma de lista al igua que los valores regra
+	myConnection =pymysql.connect( host=hostname, user=username, passwd=password, db=database, charset='utf8' )	#Crear la conexión con la BD
 	cur = myConnection.cursor()
 	myQuery="INSERT INTO "+table+" ( "
 	
@@ -61,7 +61,8 @@ def insertInDB(table, parameters, values):#Inserta un nuevo elemento en la BD, l
 	myConnection.commit()
 	result=cur.fetchall()
 	myConnection.close()
-	print(str(result))
+	if trace == True:
+		print(str(result))
 	return True #MEJORA ISSSUE 13
 
 """def transaction(table, lista):

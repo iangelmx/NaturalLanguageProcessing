@@ -12,6 +12,12 @@ import nltk.tokenize
 import nltk
 import re
 
+def leeArchivo(rutaArchivo):
+	file = open(rutaArchivo, "r")
+	archivo=file.read()
+	file.close()
+	return archivo
+
 def separaPorOraciones(cadena):
 	sent_tokenizer = nltk.data.load("nltk:tokenizers/punkt/english.pickle")
 	listaOraciones=sent_tokenizer.tokenize(cadena)
@@ -19,9 +25,7 @@ def separaPorOraciones(cadena):
 
 def imprimeElementoDetallesVocabulario(indice):
 	print("\n\nDetalles del vocabulario.\n")
-
 	print("Diccionario Completo No: "+str(indice)+" -> "+str(detallesVocabulario[indice]))
-
 	input("\nPalabra: "+str(detallesVocabulario[indice]['palabra']))
 	input("Ocurrencias: "+str(detallesVocabulario[indice]['ocurrencias']))
 	print("Contexto Izq-> "+ str( detallesVocabulario[indice]['contextoIzq'] ) )
@@ -115,3 +119,4 @@ def unusual_words(text):
 	english_vocab = set(w.lower() for w in nltk.corpus.words.words())
 	unusual = text_vocab.difference(english_vocab)
 	return sorted(unusual)
+
