@@ -102,5 +102,6 @@ def doTransaction(queriesList):
 		myConnection.close()
 		result=cur.fetchall()
 		return "Transacción finalizada con éxito"
-	except:
+	except Exception as ex:
+		print(ex)
 		return "Error en la transacción"
