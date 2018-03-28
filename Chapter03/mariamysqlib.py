@@ -65,21 +65,6 @@ def insertInDB(table, parameters, values, trace=True):#Inserta un nuevo elemento
 		print(str(result))
 	return True #MEJORA ISSSUE 13
 
-"""def transaction(table, lista):
-	myConnection =pymysql.connect( host=hostname, user=username, passwd=password, db=database,charset='utf8' )	#Crear la conexión con la BD
-	cur = myConnection.cursor()
-	transaccion = ""
-	index=1
-	cur.execute( "START TRANSACTION;\n" )
-	for item in lista:
-		cur.execute("UPDATE tokens_sin_numeros SET token=%s WHERE id=%s;\n",(myConnection.escape_string(item), index))
-		index+=1
-	cur.execute("COMMIT;")	
-	result=cur.fetchall()
-	myConnection.commit()
-	myConnection.close()
-	return result"""
-
 def doQuery( myQuery) :
 	myConnection =pymysql.connect( host=hostname, user=username, passwd=password, db=database,charset='utf8' )	#Crear la conexión con la BD
 	cur = myConnection.cursor()
