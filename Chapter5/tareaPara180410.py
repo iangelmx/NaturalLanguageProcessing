@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
 import nltk
 import re
 from collections import defaultdict
@@ -8,7 +8,6 @@ from pickle import load
 import sys
 sys.path.insert(0, '../Chapter03/mariamysqlib.py')
 sys.path.insert(0, '../Chapter03/functionsNLP.py')
-
 
 
 """from functionsNLP import *
@@ -26,6 +25,10 @@ print(unigram_tagger.evaluate(brown_tagged_sents))
 
 size = int(len(brown_tagged_sents) * 0.9)
 print(size)
+
+print("...............")
+print(brown_tagged_sents[:50])
+print(".................")
 train_sents = brown_tagged_sents[:size]
 test_sents = brown_tagged_sents[size:]
 unigram_tagger = nltk.UnigramTagger(train_sents)

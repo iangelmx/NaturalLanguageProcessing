@@ -12,8 +12,6 @@ import nltk.tokenize
 import nltk
 import re
 
-def tokeniz
-
 def leeArchivo(rutaArchivo):
 	file = open(rutaArchivo, "r")
 	archivo=file.read()
