@@ -6,7 +6,7 @@ from mariamysqlib import *
 from collections import defaultdict
 from nltk.corpus import brown
 
-"""
+
 text = word_tokenize("And now for something completely different")
 nltk.pos_tag(text)
 
@@ -26,7 +26,6 @@ interest/NN of/IN both/ABX governments/NNS ''/'' ./.
 tuplas = [nltk.tag.str2tuple(t) for t in sent.split()]
 
 
-"""
 
 pos = defaultdict(list)
 
@@ -60,4 +59,9 @@ print(regexp_tagger.tag(brown_sents[3]))
 print(regexp_tagger.evaluate(brown_tagged_sents))
 
 
+
+
+'''
+
+'''
 
