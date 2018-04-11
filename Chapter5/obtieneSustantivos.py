@@ -8,41 +8,6 @@ from pickle import load
 from functionsNLP import *
 from mariamysqlib import *
 
-def lemmatizerBD(rutaArchivoLemmas, tokens, tabla, saveToTable=False): #Tabla es a donde se grabarán los tokens y a donde se lemmatizará
-	if saveToTable == True:
-		grabaEnBD(tabla, tokens, update=False)
-	recoverFromDB = doQuery("SELECT token FROM "+tabla+" ORDER BY id;")
-	if recoverFromDB:
-		tokens=[]
-		for elemento in recoverFromDB:
-			tokens.append(elemento[0])
-	lemmas = open(rutaArchivoLemmas, mode="r", encoding="utf-8")
-	cadena=lemmas.readline()
-	conteo=0
-	transaccion="START TRANSACTION;\n"
-	while cadena != '':
-		try:
-			[lemma, palabra]=cadena.split('\n')[0].split('\t')
-			if palabra in tokens:
-				transaccion+="UPDATE "+tabla+" set token='"+str(lemma)+"' WHERE token='"+str(palabra)+"';"
-				#print("UPDATE tokens_lemmas set token='"+str(lemma)+"' WHERE token='"+str(palabra)+"';")
-			if conteo % 1000 == 0:
-				print("Actualizando Tokens Conteo-> "+str(conteo))
-			cadena=lemmas.readline()
-			conteo+=1
-		except Exception as ex:
-			print(ex)
-			pass
-	transaccion+="COMMIT;"
-	doQuery(transaccion)
-	print("Terminó lemmatizing")
-	recoverFromDB = doQuery("SELECT token FROM "+tabla+" ORDER BY id;")
-	if recoverFromDB:
-		tokensSinLemas=[]
-		for elemento in recoverFromDB:
-			tokensSinLemas.append(elemento[0])
-	return tokensSinLemas
-
 def lemmatizerBD2(rutaArchivoLemmas, tabla):
 	recoverFromDB = doQuery("SELECT token FROM "+tabla+" ORDER BY idToken;")
 	if recoverFromDB:
@@ -58,17 +23,23 @@ def lemmatizerBD2(rutaArchivoLemmas, tabla):
 		try:
 			cadena = cadena.split(' ')
 			forma = cadena[0]
+			#print("...."+str(cadena[1]))
+			etiqueta = cadena[1]
 			lemma = cadena[len(cadena)-2]
 			forma = forma.replace('#', '')
 			#print("Forma lema-> "+forma+" "+lemma)
-			if forma in tokens:
+			if (forma in tokens) and (etiqueta[0]=='N' or etiqueta[0]=='n'):
+				#print("Es sustantivo: "+forma+" - "+lemma)
 				transaccion.append("UPDATE "+tabla+" SET lemmaToken='"+lemma+"' WHERE token ='"+forma+"'")
+			"""else:
+					print("Se ignoró: "+forma+" - "+lemma)"""
 			if conteo % 100000 == 0:
 				print("Actualizando Tokens Conteo-> "+str(conteo))
 			cadena=lemmas.readline()
 			conteo+=1
 		except Exception as ex:
-			input(ex)
+			print(ex)
+			cadena=lemmas.readline()
 			pass
 	transaccion.append("COMMIT;")
 	return doTransaction(transaccion)
@@ -116,7 +87,6 @@ if unigramEspTagger == None or existe==False:
 	archivoTagger.close()
 
 print("Etiquetará del archivo pkl")
-
 listaSustantivos = []
 
 transaccion = []
@@ -151,6 +121,8 @@ print(resultT)
 a=lemmatizerBD2("generate.txt", "sustantivosLematizados")
 
 print(a)
+
+patterns = []
 
 
 
