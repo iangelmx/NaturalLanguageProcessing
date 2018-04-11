@@ -52,6 +52,6 @@ print(example)
 ##print(regexp_tagger.tag( nltk.Text(nltk.word_tokenize(train_sents)) ))
 
 """
-Extraer todos los sutantivos de e960401, lematizarlos y aplicar set()
+Extraer todos los sustantivos de e960401, lematizarlos y aplicar set()
 Si empieza con n, se obtiene la palabra.
 """
