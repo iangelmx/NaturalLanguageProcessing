@@ -14,6 +14,41 @@ doc4 = "Sometimes I feel pressure to perform well at school, but my father never
 doc5 = "Health experts say that Sugar is not good for your lifestyle." '''
 
 
+def lematizaBDArts():
+	lemmas = open("generate.txt", mode="r")#, encoding="utf-8")
+	transaccion = []
+	transaccion.append("START TRANSACTION;")
+	cadena=lemmas.readline()
+	conteo=0
+	while cadena != '':
+		try:
+			cadena = cadena.split(' ')
+			forma = cadena[0]
+			#print("...."+str(cadena[1]))
+			etiqueta = cadena[1]
+			lemma = cadena[-2]
+			forma = forma.replace('#', '')
+			print("lemma "+lemma)
+			print("forma "+forma)
+			#print("Forma lema-> "+forma+" "+lemma)
+			#print("Es sustantivo: "+forma+" - "+lemma)
+			#UPDATE articulos2 SET cuerpo = REPLACE(cuerpo, 'quedó', 'quedar') WHERE cuerpo LIKE '%quedó%';
+			transaccion.append("UPDATE articulos2 SET cuerpo = REPLACE(cuerpo, '"+forma+"', '"+lemma+"') WHERE cuerpo LIKE '%"+forma+"%';")
+			"""else:
+					print("Se ignoró: "+forma+" - "+lemma)"""
+			if conteo % 100000 == 0:
+				print("Actualizando Tokens Conteo-> "+str(conteo))
+			cadena=lemmas.readline()
+			conteo+=1
+		except Exception as ex:
+			print(ex)
+			cadena=lemmas.readline()
+			pass
+	transaccion.append("COMMIT;")
+	print(doTransaction(transaccion))
+
+#lematizaBDArts()
+
 arts = doQuery("SELECT cuerpo FROM articulos;")
 documentos = []
 
@@ -37,7 +72,9 @@ doc_complete = documentos
 ######doc_complete = [doc1, doc2, doc3, doc4, doc5]
 
 #clean documents
-######stop = set(stopwords.words('english'))
+####stop = set(stopwords.words('english'))
+#---------------stop = set(stopwords.words('spanish'))
+#print("........\n"+str(stop)+"\n-------------")
 stop = stopWordsEsp
 
 #input(stop)
@@ -45,6 +82,7 @@ stop = stopWordsEsp
 exclude = set(string.punctuation)
 
 lemma = WordNetLemmatizer()
+
 
 def clean(doc):
     stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
@@ -57,6 +95,8 @@ doc_clean = [clean(doc).split() for doc in doc_complete]
 '''Creating the term dictionary of our courpus, where every unique term is assigned an index.'''
 dictionary = corpora.Dictionary(doc_clean)
 
+#doc_clean deben ser nuestros datos.
+
 '''Converting list of documents (corpus) into Document Term Matrix using dictionary prepared above.'''
 doc_term_matrix = [dictionary.doc2bow(doc) for doc in doc_clean]
 
@@ -64,6 +104,11 @@ doc_term_matrix = [dictionary.doc2bow(doc) for doc in doc_clean]
 Lda = gensim.models.ldamodel.LdaModel
 
 '''Running and Trainign LDA model on the document term matrix.'''
-ldamodel = Lda(doc_term_matrix, num_topics=3, id2word = dictionary, passes=50)
+ldamodel = Lda(doc_term_matrix, num_topics=5, id2word = dictionary, passes=50)
 
-print(ldamodel.print_topics(num_topics=3, num_words=3))
+print(ldamodel.print_topics(num_topics=5, num_words=10))
+
+""" 
+TAREA:
+	LEMMATIZAR 2 ARTICULOS CON EL GENERATE.TXT POR PARTES DE ORACION
+"""

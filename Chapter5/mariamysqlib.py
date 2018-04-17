@@ -80,10 +80,14 @@ def doTransaction(queriesList, traceback=False):
 	try:
 		myConnection =pymysql.connect( host=hostname, user=username, passwd=password, db=database,charset='utf8' )	#Crear la conexión con la BD
 		cur = myConnection.cursor()
+		a=0
 		for query in queriesList:
 			if traceback == True:
 				print(query)
 			cur.execute(query)
+			a+=1
+			if a%10000 == 0:
+				print("Working in sentence number: "+str(a))
 		print("Transacción armada.\nSe ejecutará...")
 		myConnection.commit()
 		myConnection.close()
