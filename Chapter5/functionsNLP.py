@@ -11,6 +11,52 @@ from nltk.text import ConcordanceIndex
 import nltk.tokenize
 import nltk
 import re
+from pickle import dump
+from pickle import load
+
+def tagRawText2POS(listaOraciones):
+	existe=False
+	unigramEspTagger=None
+	try:
+		entrada = open('espTagger.pkl', 'rb')
+		unigramEspTagger = load(entrada)
+		entrada.close()
+		existe=True
+	except Exception as ex:
+		print(ex)
+
+	if unigramEspTagger == None or existe==False:
+		print("Generará el archivo")
+		patterns = [
+		    (r'.*o$', 'NCMS'),               # Sustantivo Masculino
+		    (r'.*a$', 'NCFS'),          		 # Sustantivo Femenino
+		    (r'.*as$', 'NCFP'),
+		    (r'.*os$', 'NCMP')
+		]
+		regexp_tagger = nltk.RegexpTagger(patterns)
+		cess_tagged_sents = nltk.corpus.cess_esp.tagged_sents()
+
+		'''oracion = listaOraciones[10]
+		oracionTokenizada = nltk.Text(nltk.word_tokenize(oracion))
+
+		var = regexp_tagger.tag( oracionTokenizada )'''
+
+		""" Training nltk.UnigramTagger usando oraciones desde cess_esp """
+		unigramEspTagger = nltk.UnigramTagger( cess_tagged_sents, backoff=nltk.RegexpTagger(patterns))
+
+		archivoTagger = open('espTagger.pkl', 'wb')
+		dump(unigramEspTagger, archivoTagger, -1)
+		archivoTagger.close()
+
+	print("Etiquetará del archivo pkl")
+	listaToken_TAG = []
+	for enunciado in listaOraciones:
+		oracionTokenizada=nltk.Text(nltk.word_tokenize(enunciado))
+		example = unigramEspTagger.tag(oracionTokenizada)
+		for item in example:
+			listaItem = list(item)
+			listaToken_TAG.append(listaItem)
+	return listaToken_TAG
 
 def leeArchivo(rutaArchivo):
 	file = open(rutaArchivo, "r")
