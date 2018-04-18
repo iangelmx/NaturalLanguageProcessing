@@ -1,0 +1,4 @@
+núcleo NCMS000 núcleo
+núcleos NCMP000 núcleo
+número NCMS000 número
+números NCMP000 número

@@ -1,0 +1,4 @@
+ámbar NCMS000 ámbar
+ámbares NCMP000 ámbar
+ámbito NCMS000 ámbito
+ámbitos NCMP000 ámbito

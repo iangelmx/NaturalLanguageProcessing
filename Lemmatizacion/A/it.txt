@@ -1,0 +1,12 @@
+italiano AGMS000 italiano
+italianos AGMP000 italiano
+italiana AGFS000 italiano
+italianas AGFP000 italiano
+itinerante AGIS000 itinerante
+itinerantes AGIP000 itinerante
+itinerante AGIS000 itinerante
+itinerantes AGIP000 itinerante
+itinerario AGMS000 itinerario
+itinerarios AGMP000 itinerario
+itineraria AGFS000 itinerario
+itinerarias AGFP000 itinerario

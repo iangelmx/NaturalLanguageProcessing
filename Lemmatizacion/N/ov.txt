@@ -1,0 +1,10 @@
+ovaciones NCFP000 ovación
+ovación NCFS000 ovación
+ovario NCMS000 ovario
+ovarios NCMP000 ovario
+oveja NCFS000 oveja
+ovejas NCFP000 oveja
+ovidia NP00000 ovidia
+ovidio NP00000 ovidio
+ovillo NCMS000 ovillo
+ovillos NCMP000 ovillo

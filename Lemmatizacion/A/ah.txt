@@ -1,0 +1,8 @@
+ahogado AGMS000 ahogado
+ahogados AGMP000 ahogado
+ahogada AGFS000 ahogado
+ahogadas AGFP000 ahogado
+ahorrativo AGMS000 ahorrativo
+ahorrativos AGMP000 ahorrativo
+ahorrativa AGFS000 ahorrativo
+ahorrativas AGFP000 ahorrativo

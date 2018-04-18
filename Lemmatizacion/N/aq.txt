@@ -1,0 +1,6 @@
+aquelarre NCMS000 aquelarre
+aquelarres NCMP000 aquelarre
+aquiles NP00000 aquiles
+aquilino NP00000 aquilino
+aquilones NCMP000 aquilón
+aquilón NCMS000 aquilón

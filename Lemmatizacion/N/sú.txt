@@ -1,0 +1,6 @@
+súbdita NCFS000 súbdita
+súbditas NCFP000 súbdita
+súbdito NCMS000 súbdito
+súbditos NCMP000 súbdito
+súplica NCFS000 súplica
+súplicas NCFP000 súplica

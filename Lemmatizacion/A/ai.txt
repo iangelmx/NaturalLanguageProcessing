@@ -1,0 +1,16 @@
+airado AGMS000 airado
+airados AGMP000 airado
+airada AGFS000 airado
+airadas AGFP000 airado
+airoso AGMS000 airoso
+airosos AGMP000 airoso
+airosa AGFS000 airoso
+airosas AGFP000 airoso
+aislacionista AGIS000 aislacionista
+aislacionistas AGIP000 aislacionista
+aislacionista AGIS000 aislacionista
+aislacionistas AGIP000 aislacionista
+aislado AGMS000 aislado
+aislados AGMP000 aislado
+aislada AGFS000 aislado
+aisladas AGFP000 aislado

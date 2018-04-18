@@ -1,0 +1,4 @@
+oxidaciones NCFP000 oxidación
+oxidación NCFS000 oxidación
+oxígeno NCMS000 oxígeno
+oxígenos NCMP000 oxígeno

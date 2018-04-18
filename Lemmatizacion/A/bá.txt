@@ -1,0 +1,12 @@
+báltico AGMS000 báltico
+bálticos AGMP000 báltico
+báltica AGFS000 báltico
+bálticas AGFP000 báltico
+bárbaro AGMS000 bárbaro
+bárbaros AGMP000 bárbaro
+bárbara AGFS000 bárbaro
+bárbaras AGFP000 bárbaro
+básico AGMS000 básico
+básicos AGMP000 básico
+básica AGFS000 básico
+básicas AGFP000 básico

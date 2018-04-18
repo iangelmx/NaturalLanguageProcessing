@@ -1,0 +1,10 @@
+cualesquiera DI0CP00 cualesquiera
+cualquier DI0CS00 cualquier
+cuanto D00FS00 cuanto
+cuánto DT3FS00 cuánto
+cuanto D00FP00 cuanto
+cuánto DT3FP00 cuánto
+cuanto D00MS00 cuanto
+cuánto DT3MS00 cuánto
+cuanto D00MP00 cuanto
+cuánto DT3MP00 cuánto

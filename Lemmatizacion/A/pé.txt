@@ -1,0 +1,8 @@
+pérfido AGMS000 pérfido
+pérfidos AGMP000 pérfido
+pérfida AGFS000 pérfido
+pérfidas AGFP000 pérfido
+pésimo AGMS000 pésimo
+pésimos AGMP000 pésimo
+pésima AGFS000 pésimo
+pésimas AGFP000 pésimo

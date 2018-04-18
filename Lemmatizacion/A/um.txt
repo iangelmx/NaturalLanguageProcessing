@@ -1,0 +1,8 @@
+umbelífero AGMS000 umbelífero
+umbelíferos AGMP000 umbelífero
+umbelífera AGFS000 umbelífero
+umbelíferas AGFP000 umbelífero
+umbroso AGMS000 umbroso
+umbrosos AGMP000 umbroso
+umbrosa AGFS000 umbroso
+umbrosas AGFP000 umbroso

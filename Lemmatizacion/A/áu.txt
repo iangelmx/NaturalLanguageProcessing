@@ -1,0 +1,4 @@
+áureo AGMS000 áureo
+áureos AGMP000 áureo
+áurea AGFS000 áureo
+áureas AGFP000 áureo

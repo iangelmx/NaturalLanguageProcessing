@@ -1,0 +1,7 @@
+fábrica NCFS000 fábrica
+fábricas NCFP000 fábrica
+fábula NCFS000 fábula
+fábulas NCFP000 fábula
+fármaco NCMS000 fármaco
+fármacos NCMP000 fármaco
+fátima NP00000 fátima

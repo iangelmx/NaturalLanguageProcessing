@@ -1,0 +1,6 @@
+cúmulo NCMS000 cúmulo
+cúmulos NCMP000 cúmulo
+cúpula NCFS000 cúpula
+cúpulas NCFP000 cúpula
+cúspide NCFS000 cúspide
+cúspides NCFP000 cúspide

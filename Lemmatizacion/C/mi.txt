@@ -1,0 +1,2 @@
+mientras CS00 mientras
+mismo C000000 mismo

@@ -1,0 +1,4 @@
+público AGMS000 público
+públicos AGMP000 público
+pública AGFS000 público
+públicas AGFP000 público

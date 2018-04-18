@@ -1,0 +1,8 @@
+síquico AGMS000 síquico
+síquicos AGMP000 síquico
+síquica AGFS000 síquico
+síquicas AGFP000 síquico
+sísmico AGMS000 sísmico
+sísmicos AGMP000 sísmico
+sísmica AGFS000 sísmico
+sísmicas AGFP000 sísmico

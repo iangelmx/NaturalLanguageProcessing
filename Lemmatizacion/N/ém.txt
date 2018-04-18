@@ -1,0 +1,6 @@
+émbolo NCMS000 émbolo
+émbolos NCMP000 émbolo
+émula NCFS000 émula
+émulas NCFP000 émula
+émulo NCMS000 émulo
+émulos NCMP000 émulo

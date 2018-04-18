@@ -1,0 +1,12 @@
+oda NCFS000 oda
+odas NCFP000 oda
+oderico NP00000 oderico
+odila NP00000 odila
+odilón NP00000 odilón
+odín NP00000 odín
+odio NCMS000 odio
+odios NCMP000 odio
+odo NP00000 odo
+odoacro NP00000 odoacro
+odre NCMS000 odre
+odres NCMP000 odre

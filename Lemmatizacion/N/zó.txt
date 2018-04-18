@@ -1,0 +1,3 @@
+zócalo NCMS000 zócalo
+zócalos NCMP000 zócalo
+zósimo NP00000 zósimo

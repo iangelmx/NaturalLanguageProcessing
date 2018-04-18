@@ -1,0 +1,8 @@
+ozónico AGMS000 ozónico
+ozónicos AGMP000 ozónico
+ozónica AGFS000 ozónico
+ozónicas AGFP000 ozónico
+ozonífero AGMS000 ozonífero
+ozoníferos AGMP000 ozonífero
+ozonífera AGFS000 ozonífero
+ozoníferas AGFP000 ozonífero

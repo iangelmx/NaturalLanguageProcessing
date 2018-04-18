@@ -1,0 +1,14 @@
+italiana NCFS000 italiana
+italianas NCFP000 italiana
+italiano NCMS000 italiano
+italianos NCMP000 italiano
+italina NP00000 italina
+italo NP00000 italo
+itamar NP00000 itamar
+itatay NP00000 itatay
+itatí NP00000 itatí
+itinerario NCMS000 itinerario
+itinerarios NCMP000 itinerario
+itzaul NP00000 itzaul
+itzel NP00000 itzel
+itziar NP00000 itziar

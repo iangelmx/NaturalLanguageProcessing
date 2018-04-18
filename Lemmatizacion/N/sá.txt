@@ -1,0 +1,16 @@
+sábado NCMS000 sábado
+sábados NCMP000 sábado
+sábana NCFS000 sábana
+sábanas NCFP000 sábana
+sádica NCFS000 sádica
+sádicas NCFP000 sádica
+sádico NCMS000 sádico
+sádicos NCMP000 sádico
+sándalo NCMS000 sándalo
+sándalos NCMP000 sándalo
+sátira NCFS000 sátira
+sátiras NCFP000 sátira
+sátiro NCMS000 sátiro
+sátiros NCMP000 sátiro
+sátrapa NCMS000 sátrapa
+sátrapas NCMP000 sátrapa

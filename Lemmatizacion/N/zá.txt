@@ -1,0 +1,4 @@
+zángana NCFS000 zángana
+zánganas NCFP000 zángana
+zángano NCMS000 zángano
+zánganos NCMP000 zángano

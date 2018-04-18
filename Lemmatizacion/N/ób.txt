@@ -1,0 +1,4 @@
+óbito NCMS000 óbito
+óbitos NCMP000 óbito
+óbolo NCMS000 óbolo
+óbolos NCMP000 óbolo

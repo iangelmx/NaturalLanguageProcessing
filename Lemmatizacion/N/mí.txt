@@ -1,0 +1,11 @@
+mímica NCFS000 mímica
+mímicas NCFP000 mímica
+mínimo NCMS000 mínimo
+mínimos NCMP000 mínimo
+mísero NCMS000 mísero
+míseros NCMP000 mísero
+mística NCFS000 mística
+místicas NCFP000 mística
+místico NCMS000 místico
+místicos NCMP000 místico
+mítines NCMP000 mitin

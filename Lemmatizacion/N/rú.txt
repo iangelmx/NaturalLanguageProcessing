@@ -1,0 +1,6 @@
+rúbrica NCFS000 rúbrica
+rúbricas NCFP000 rúbrica
+rústica NCFS000 rústica
+rústicas NCFP000 rústica
+rústico NCMS000 rústico
+rústicos NCMP000 rústico

@@ -1,0 +1,8 @@
+híbrido AGMS000 híbrido
+híbridos AGMP000 híbrido
+híbrida AGFS000 híbrido
+híbridas AGFP000 híbrido
+hípico AGMS000 hípico
+hípicos AGMP000 hípico
+hípica AGFS000 hípico
+hípicas AGFP000 hípico

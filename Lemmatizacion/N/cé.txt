@@ -1,0 +1,15 @@
+cédula NCFS000 cédula
+cédulas NCFP000 cédula
+céfiro NCMS000 céfiro
+céfiros NCMP000 céfiro
+célibe NCIS000 célibe
+célibes NCIP000 célibe
+célula NCFS000 célula
+células NCFP000 célula
+céntimo NCMS000 céntimo
+céntimos NCMP000 céntimo
+césar NCMS000 césar
+césares NCMP000 césar
+césar NP00000 césar
+césped NCMS000 césped
+céspedes NCMP000 césped

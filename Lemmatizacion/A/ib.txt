@@ -1,0 +1,16 @@
+ibero AGMS000 ibero
+iberos AGMP000 ibero
+ibera AGFS000 ibero
+iberas AGFP000 ibero
+iberio AGMS000 iberio
+iberios AGMP000 iberio
+iberia AGFS000 iberio
+iberias AGFP000 iberio
+ibérico AGMS000 ibérico
+ibéricos AGMP000 ibérico
+ibérica AGFS000 ibérico
+ibéricas AGFP000 ibérico
+iberoamericano AGMS000 iberoamericano
+iberoamericanos AGMP000 iberoamericano
+iberoamericana AGFS000 iberoamericano
+iberoamericanas AGFP000 iberoamericano

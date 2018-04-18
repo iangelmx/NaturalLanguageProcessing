@@ -1,0 +1,16 @@
+bíblico AGMS000 bíblico
+bíblicos AGMP000 bíblico
+bíblica AGFS000 bíblico
+bíblicas AGFP000 bíblico
+bígamo AGMS000 bígamo
+bígamos AGMP000 bígamo
+bígama AGFS000 bígamo
+bígamas AGFP000 bígamo
+bímano AGMS000 bímano
+bímanos AGMP000 bímano
+bímana AGFS000 bímano
+bímanas AGFP000 bímano
+bípedo AGMS000 bípedo
+bípedos AGMP000 bípedo
+bípeda AGFS000 bípedo
+bípedas AGFP000 bípedo

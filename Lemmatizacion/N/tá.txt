@@ -1,0 +1,9 @@
+tábano NCMS000 tábano
+tábanos NCMP000 tábano
+tácito NP00000 tácito
+táctica NCFS000 táctica
+tácticas NCFP000 táctica
+tándem NCMS000 tándem
+tándemes NCMP000 tándem
+tártaro NCMS000 tártaro
+tártaros NCMP000 tártaro

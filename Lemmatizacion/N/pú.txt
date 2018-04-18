@@ -1,0 +1,12 @@
+púa NCFS000 púa
+púas NCFP000 púa
+público NCMS000 público
+públicos NCMP000 público
+púgil NCMS000 púgil
+púgiles NCMP000 púgil
+púlpito NCMS000 púlpito
+púlpitos NCMP000 púlpito
+púrpura NCFS000 púrpura
+púrpuras NCFP000 púrpura
+pústula NCFS000 pústula
+pústulas NCFP000 pústula

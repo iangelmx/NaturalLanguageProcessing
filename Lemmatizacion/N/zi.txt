@@ -1,0 +1,10 @@
+zigzag NCMS000 zigzag
+zigzages NCMP000 zigzag
+zila NP00000 zila
+zilla NP00000 zilla
+zina NP00000 zina
+zinc NCMS000 zinc
+zincs NCMP000 zinc
+zirconio NCMS000 zirconio
+zirconios NCMP000 zirconio
+zita NP00000 zita

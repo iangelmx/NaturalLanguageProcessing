@@ -1,0 +1,8 @@
+ópera NCFS000 ópera
+óperas NCFP000 ópera
+óptica NCFS000 óptica
+ópticas NCFP000 óptica
+óptico NCMS000 óptico
+ópticos NCMP000 óptico
+óptimo NCMS000 óptimo
+óptimos NCMP000 óptimo

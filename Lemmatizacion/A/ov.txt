@@ -1,0 +1,12 @@
+oval AGIS000 oval
+ovales AGIP000 oval
+oval AGIS000 oval
+ovales AGIP000 oval
+ovalado AGMS000 ovalado
+ovalados AGMP000 ovalado
+ovalada AGFS000 ovalado
+ovaladas AGFP000 ovalado
+ovejuno AGMS000 ovejuno
+ovejunos AGMP000 ovejuno
+ovejuna AGFS000 ovejuno
+ovejunas AGFP000 ovejuno

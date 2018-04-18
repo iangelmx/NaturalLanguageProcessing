@@ -1,0 +1,4 @@
+si CS00 si
+siempre CS00 siempre
+sino CC00 sino
+siquiera CC00 siquiera

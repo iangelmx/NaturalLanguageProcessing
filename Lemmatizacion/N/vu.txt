@@ -1,0 +1,13 @@
+vuelco NCMS000 vuelco
+vuelcos NCMP000 vuelco
+vuelo NCMS000 vuelo
+vuelos NCMP000 vuelo
+vuelta NCFS000 vuelta
+vueltas NCFP000 vuelta
+vulgaridad NCFS000 vulgaridad
+vulgaridades NCFP000 vulgaridad
+vulgarismo NCMS000 vulgarismo
+vulgarismos NCMP000 vulgarismo
+vulgo NCMS000 vulgo
+vulgos NCMP000 vulgo
+vulpiano NP00000 vulpiano

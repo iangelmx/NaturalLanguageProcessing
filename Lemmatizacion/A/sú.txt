@@ -1,0 +1,8 @@
+súbdito AGMS000 súbdito
+súbditos AGMP000 súbdito
+súbdita AGFS000 súbdito
+súbditas AGFP000 súbdito
+súbito AGMS000 súbito
+súbitos AGMP000 súbito
+súbita AGFS000 súbito
+súbitas AGFP000 súbito

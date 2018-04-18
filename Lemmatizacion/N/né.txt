@@ -1,0 +1,4 @@
+néctar NCMS000 néctar
+néctares NCMP000 néctar
+nélida NP00000 nélida
+néstor NP00000 néstor

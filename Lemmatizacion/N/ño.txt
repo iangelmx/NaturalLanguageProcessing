@@ -1,0 +1,8 @@
+ñoña NCFS000 ñoña
+ñoñas NCFP000 ñoña
+ñoñeces NCFP000 ñoñez
+ñoñería NCFS000 ñoñería
+ñoñerías NCFP000 ñoñería
+ñoñez NCFS000 ñoñez
+ñoño NCMS000 ñoño
+ñoños NCMP000 ñoño

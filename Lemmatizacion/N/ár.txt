@@ -1,0 +1,12 @@
+árabe NCIS000 árabe
+árabes NCIP000 árabe
+árbitro NCMS000 árbitro
+árbitros NCMP000 árbitro
+árbol NCMS000 árbol
+árboles NCMP000 árbol
+área NCFS000 área
+áreas NCFP000 área
+árido NCMS000 árido
+áridos NCMP000 árido
+árnica NCFS000 árnica
+árnicas NCFP000 árnica

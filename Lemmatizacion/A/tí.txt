@@ -1,0 +1,12 @@
+tímido AGMS000 tímido
+tímidos AGMP000 tímido
+tímida AGFS000 tímido
+tímidas AGFP000 tímido
+típico AGMS000 típico
+típicos AGMP000 típico
+típica AGFS000 típico
+típicas AGFP000 típico
+tísico AGMS000 tísico
+tísicos AGMP000 tísico
+tísica AGFS000 tísico
+tísicas AGFP000 tísico

@@ -1,0 +1,8 @@
+lóbrego AGMS000 lóbrego
+lóbregos AGMP000 lóbrego
+lóbrega AGFS000 lóbrego
+lóbregas AGFP000 lóbrego
+lógico AGMS000 lógico
+lógicos AGMP000 lógico
+lógica AGFS000 lógico
+lógicas AGFP000 lógico

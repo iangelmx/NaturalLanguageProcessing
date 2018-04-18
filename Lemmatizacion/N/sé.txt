@@ -1,0 +1,5 @@
+séfora NP00000 séfora
+sémola NCFS000 sémola
+sémolas NCFP000 sémola
+séquito NCMS000 séquito
+séquitos NCMP000 séquito

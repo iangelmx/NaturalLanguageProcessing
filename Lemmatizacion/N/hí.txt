@@ -1,0 +1,6 @@
+híbrido NCMS000 híbrido
+híbridos NCMP000 híbrido
+hígado NCMS000 hígado
+hígados NCMP000 hígado
+hípica NCFS000 hípica
+hípicas NCFP000 hípica

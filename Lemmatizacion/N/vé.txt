@@ -1,0 +1,6 @@
+vértebra NCFS000 vértebra
+vértebras NCFP000 vértebra
+vértice NCMS000 vértice
+vértices NCMP000 vértice
+vértigo NCMS000 vértigo
+vértigos NCMP000 vértigo

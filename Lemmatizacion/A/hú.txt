@@ -1,0 +1,8 @@
+húmedo AGMS000 húmedo
+húmedos AGMP000 húmedo
+húmeda AGFS000 húmedo
+húmedas AGFP000 húmedo
+húngaro AGMS000 húngaro
+húngaros AGMP000 húngaro
+húngara AGFS000 húngaro
+húngaras AGFP000 húngaro

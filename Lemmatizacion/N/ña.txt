@@ -1,0 +1,10 @@
+ñame NCMS000 ñame
+ñames NCMP000 ñame
+ñandú NCMS000 ñandú
+ñandúes NCMP000 ñandú
+ñaña NCFS000 ñaña
+ñañas NCFP000 ñaña
+ñaño NCMS000 ñaño
+ñaños NCMP000 ñaño
+ñaque NCMS000 ñaque
+ñaques NCMP000 ñaque

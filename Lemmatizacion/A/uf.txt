@@ -1,0 +1,4 @@
+ufano AGMS000 ufano
+ufanos AGMP000 ufano
+ufana AGFS000 ufano
+ufanas AGFP000 ufano

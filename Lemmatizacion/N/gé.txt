@@ -1,0 +1,6 @@
+género NCMS000 género
+géneros NCMP000 género
+génesis NCFS000 génesis
+génesis NCFP000 génesis
+génesis NP00000 génesis
+gérmenes NCMP000 germen

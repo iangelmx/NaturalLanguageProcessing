@@ -1,0 +1,6 @@
+mi DP1CS00 mi
+mi DP1CP00 mi
+mismo D00FS00 mismo
+mismo D00FP00 mismo
+mismo D00MS00 mismo
+mismo D00MP00 mismo

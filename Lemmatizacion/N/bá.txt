@@ -1,0 +1,17 @@
+báculo NCMS000 báculo
+báculos NCMP000 báculo
+bálsamo NCMS000 bálsamo
+bálsamos NCMP000 bálsamo
+báltica NCFS000 báltica
+bálticas NCFP000 báltica
+báltico NCMS000 báltico
+bálticos NCMP000 báltico
+bárbara NCFS000 bárbara
+bárbaras NCFP000 bárbara
+bárbara NP00000 bárbara
+bárbaro NCMS000 bárbaro
+bárbaros NCMP000 bárbaro
+bártulo NCMS000 bártulo
+bártulos NCMP000 bártulo
+báscula NCFS000 báscula
+básculas NCFP000 báscula

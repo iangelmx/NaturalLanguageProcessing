@@ -1,0 +1,11 @@
+jilguero NCMS000 jilguero
+jilgueros NCMP000 jilguero
+jimena NP00000 jimena
+jinete NCMS000 jinete
+jinetes NCMP000 jinete
+jira NCFS000 jira
+jiras NCFP000 jira
+jirafa NCFS000 jirafa
+jirafas NCFP000 jirafa
+jirones NCMP000 jirón
+jirón NCMS000 jirón

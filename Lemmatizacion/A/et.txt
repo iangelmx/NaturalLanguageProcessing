@@ -1,0 +1,16 @@
+etéreo AGMS000 etéreo
+etéreos AGMP000 etéreo
+etérea AGFS000 etéreo
+etéreas AGFP000 etéreo
+eterno AGMS000 eterno
+eternos AGMP000 eterno
+eterna AGFS000 eterno
+eternas AGFP000 eterno
+etimológico AGMS000 etimológico
+etimológicos AGMP000 etimológico
+etimológica AGFS000 etimológico
+etimológicas AGFP000 etimológico
+etíope AGIS000 etíope
+etíopes AGIP000 etíope
+etíope AGIS000 etíope
+etíopes AGIP000 etíope

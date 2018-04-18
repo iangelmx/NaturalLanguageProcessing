@@ -1,0 +1,12 @@
+vuelto AGMS000 vuelto
+vueltos AGMP000 vuelto
+vuelta AGFS000 vuelto
+vueltas AGFP000 vuelto
+vulgar AGIS000 vulgar
+vulgares AGIP000 vulgar
+vulgar AGIS000 vulgar
+vulgares AGIP000 vulgar
+vulnerable AGIS000 vulnerable
+vulnerables AGIP000 vulnerable
+vulnerable AGIS000 vulnerable
+vulnerables AGIP000 vulnerable

@@ -1,0 +1,12 @@
+pío AGMS000 pío
+píos AGMP000 pío
+pía AGFS000 pío
+pías AGFP000 pío
+pícaro AGMS000 pícaro
+pícaros AGMP000 pícaro
+pícara AGFS000 pícaro
+pícaras AGFP000 pícaro
+pírrico AGMS000 pírrico
+pírricos AGMP000 pírrico
+pírrica AGFS000 pírrico
+pírricas AGFP000 pírrico

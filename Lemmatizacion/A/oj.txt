@@ -1,0 +1,12 @@
+ojeroso AGMS000 ojeroso
+ojerosos AGMP000 ojeroso
+ojerosa AGFS000 ojeroso
+ojerosas AGFP000 ojeroso
+ojival AGIS000 ojival
+ojivales AGIP000 ojival
+ojival AGIS000 ojival
+ojivales AGIP000 ojival
+ojoso AGMS000 ojoso
+ojosos AGMP000 ojoso
+ojosa AGFS000 ojoso
+ojosas AGFP000 ojoso

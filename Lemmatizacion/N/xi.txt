@@ -1,0 +1,10 @@
+xilofones NCMP000 xilofón
+xilofón NCMS000 xilofón
+xilofonista NCIS000 xilofonista
+xilofonistas NCIP000 xilofonista
+xilófono NCMS000 xilófono
+xilófonos NCMP000 xilófono
+xilografía NCFS000 xilografía
+xilografías NCFP000 xilografía
+ximena NP00000 ximena
+xiomara NP00000 xiomara

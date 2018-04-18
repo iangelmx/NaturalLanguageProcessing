@@ -1,0 +1,5 @@
+iziar NP00000 iziar
+izquierda NCFS000 izquierda
+izquierdas NCFP000 izquierda
+izquierdismo NCMS000 izquierdismo
+izquierdismos NCMP000 izquierdismo

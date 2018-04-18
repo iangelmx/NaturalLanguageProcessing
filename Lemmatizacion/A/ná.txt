@@ -1,0 +1,8 @@
+náufrago AGMS000 náufrago
+náufragos AGMP000 náufrago
+náufraga AGFS000 náufrago
+náufragas AGFP000 náufrago
+náutico AGMS000 náutico
+náuticos AGMP000 náutico
+náutica AGFS000 náutico
+náuticas AGFP000 náutico

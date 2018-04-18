@@ -1,0 +1,8 @@
+ucranio AGMS000 ucranio
+ucranios AGMP000 ucranio
+ucrania AGFS000 ucranio
+ucranias AGFP000 ucranio
+ucraniano AGMS000 ucraniano
+ucranianos AGMP000 ucraniano
+ucraniana AGFS000 ucraniano
+ucranianas AGFP000 ucraniano

@@ -1,0 +1,8 @@
+pálido AGMS000 pálido
+pálidos AGMP000 pálido
+pálida AGFS000 pálido
+pálidas AGFP000 pálido
+pánfilo AGMS000 pánfilo
+pánfilos AGMP000 pánfilo
+pánfila AGFS000 pánfilo
+pánfilas AGFP000 pánfilo

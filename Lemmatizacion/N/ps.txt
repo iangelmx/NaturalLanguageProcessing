@@ -1,0 +1,12 @@
+psicóloga NCFS000 psicóloga
+psicólogas NCFP000 psicóloga
+psicología NCFS000 psicología
+psicologías NCFP000 psicología
+psicólogo NCMS000 psicólogo
+psicólogos NCMP000 psicólogo
+psiquiatra NCFS000 psiquiatra
+psiquiatras NCFP000 psiquiatra
+psiquiatra NCMS000 psiquiatra
+psiquiatras NCMP000 psiquiatra
+psiquiatría NCFS000 psiquiatría
+psiquiatrías NCFP000 psiquiatría

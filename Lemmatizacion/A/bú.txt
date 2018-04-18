@@ -1,0 +1,4 @@
+búlgaro AGMS000 búlgaro
+búlgaros AGMP000 búlgaro
+búlgara AGFS000 búlgaro
+búlgaras AGFP000 búlgaro

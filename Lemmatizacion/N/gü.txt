@@ -1,0 +1,8 @@
+güera NCFS000 güera
+güeras NCFP000 güera
+güero NCMS000 güero
+güeros NCMP000 güero
+güira NCFS000 güira
+güiras NCFP000 güira
+güisqui NCMS000 güisqui
+güisquis NCMP000 güisqui

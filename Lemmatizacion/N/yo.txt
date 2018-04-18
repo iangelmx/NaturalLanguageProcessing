@@ -1,0 +1,17 @@
+yoconda NP00000 yoconda
+yodo NCMS000 yodo
+yodos NCMP000 yodo
+yodoformo NCMS000 yodoformo
+yodoformos NCMP000 yodoformo
+yoel NP00000 yoel
+yoga NCMS000 yoga
+yogas NCMP000 yoga
+yogui NCIS000 yogui
+yoguis NCIP000 yogui
+yogur NCMS000 yogur
+yogures NCMP000 yogur
+yogures NCMP000 yogurt
+yogurt NCMS000 yogurt
+yolanda NP00000 yolanda
+yole NP00000 yole
+yone NP00000 yone

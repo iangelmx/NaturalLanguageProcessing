@@ -1,0 +1,6 @@
+sócrates NP00000 sócrates
+sófocles NP00000 sófocles
+sólido NCMS000 sólido
+sólidos NCMP000 sólido
+sótano NCMS000 sótano
+sótanos NCMP000 sótano

@@ -1,0 +1,17 @@
+ibar NP00000 ibar
+iber NP00000 iber
+ibera NCFS000 ibera
+iberas NCFP000 ibera
+iberia NP00000 iberia
+ibérico NCMS000 ibérico
+ibéricos NCMP000 ibérico
+ibérico NP00000 ibérico
+iberio NP00000 iberio
+ibero NCMS000 ibero
+iberos NCMP000 ibero
+ibero NP00000 ibero
+iberoamericana NCFS000 iberoamericana
+iberoamericanas NCFP000 iberoamericana
+iberoamericano NCMS000 iberoamericano
+iberoamericanos NCMP000 iberoamericano
+ibi NP00000 ibi

@@ -1,0 +1,11 @@
+zeda NCFS000 zeda
+zedas NCFP000 zeda
+zeeb NP00000 zeeb
+zelma NP00000 zelma
+zelmar NP00000 zelmar
+zelmira NP00000 zelmira
+zenit NCMS000 zenit
+zenites NCMP000 zenit
+zenón NP00000 zenón
+zeta NCFS000 zeta
+zetas NCFP000 zeta

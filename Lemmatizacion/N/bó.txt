@@ -1,0 +1,7 @@
+bóer NCMS000 bóer
+bóeres NCMP000 bóer
+bólido NCMS000 bólido
+bólidos NCMP000 bólido
+bóreas NCMS000 bóreas
+bóveda NCFS000 bóveda
+bóvedas NCFP000 bóveda

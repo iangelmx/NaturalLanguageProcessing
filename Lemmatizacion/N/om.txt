@@ -1,0 +1,11 @@
+omar NP00000 omar
+ombligo NCMS000 ombligo
+ombligos NCMP000 ombligo
+omisiones NCFP000 omisión
+omisión NCFS000 omisión
+omnipotencia NCFS000 omnipotencia
+omnipotencias NCFP000 omnipotencia
+omnisciencia NCFS000 omnisciencia
+omnisciencias NCFP000 omnisciencia
+omoplato NCMS000 omoplato
+omoplatos NCMP000 omoplato

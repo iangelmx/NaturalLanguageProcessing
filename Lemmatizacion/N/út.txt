@@ -1,0 +1,3 @@
+útero NCMS000 útero
+úteros NCMP000 útero
+útiles NCMP000 útiles

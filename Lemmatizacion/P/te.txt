@@ -1,0 +1,5 @@
+te PP2CSR0 tú
+tercer P03FS00 tercer
+tercer P03FP00 tercer
+tercer P03MS00 tercer
+tercer P03MP00 tercer

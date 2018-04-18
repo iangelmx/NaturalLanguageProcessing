@@ -1,0 +1,12 @@
+yugoeslavo AGMS000 yugoeslavo
+yugoeslavos AGMP000 yugoeslavo
+yugoeslava AGFS000 yugoeslavo
+yugoeslavas AGFP000 yugoeslavo
+yugoslavo AGMS000 yugoslavo
+yugoslavos AGMP000 yugoslavo
+yugoslava AGFS000 yugoslavo
+yugoslavas AGFP000 yugoslavo
+yugular AGIS000 yugular
+yugulares AGIP000 yugular
+yugular AGIS000 yugular
+yugulares AGIP000 yugular

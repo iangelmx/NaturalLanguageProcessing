@@ -1,0 +1,5 @@
+kurda NCFS000 kurda
+kurdas NCFP000 kurda
+kurdo NCMS000 kurdo
+kurdos NCMP000 kurdo
+kurt NP00000 kurt

@@ -1,0 +1,10 @@
+sílaba NCFS000 sílaba
+sílabas NCFP000 sílaba
+símbolo NCMS000 símbolo
+símbolos NCMP000 símbolo
+síndrome NCMS000 síndrome
+síndromes NCMP000 síndrome
+síntesis NCFS000 síntesis
+síntesises NCFP000 síntesis
+síntoma NCMS000 síntoma
+síntomas NCMP000 síntoma

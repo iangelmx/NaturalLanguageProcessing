@@ -1,0 +1,11 @@
+ebanista NCIS000 ebanista
+ebanistas NCIP000 ebanista
+ebe NP00000 ebe
+eber NP00000 eber
+eberardo NP00000 eberardo
+ebria NCFS000 ebria
+ebrias NCFP000 ebria
+ebrio NCMS000 ebrio
+ebrios NCMP000 ebrio
+ebulliciones NCFP000 ebullición
+ebullición NCFS000 ebullición

@@ -1,0 +1,14 @@
+té NCMS000 té
+tés NCMP000 té
+técnica NCFS000 técnica
+técnicas NCFP000 técnica
+técnico NCMS000 técnico
+técnicos NCMP000 técnico
+télex NCMS000 télex
+télexes NCMP000 télex
+témpano NCMS000 témpano
+témpanos NCMP000 témpano
+término NCMS000 término
+términos NCMP000 término
+tétano NCMS000 tétano
+tétanos NCMP000 tétano

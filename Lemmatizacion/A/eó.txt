@@ -1,0 +1,4 @@
+eólico AGMS000 eólico
+eólicos AGMP000 eólico
+eólica AGFS000 eólico
+eólicas AGFP000 eólico

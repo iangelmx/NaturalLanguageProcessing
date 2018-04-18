@@ -1,0 +1,15 @@
+tía NCFS000 tía
+tías NCFP000 tía
+tímpano NCMS000 tímpano
+tímpanos NCMP000 tímpano
+tío NCMS000 tío
+tíos NCMP000 tío
+tíquico NP00000 tíquico
+tísica NCFS000 tísica
+tísicas NCFP000 tísica
+tísico NCMS000 tísico
+tísicos NCMP000 tísico
+títere NCIS000 títere
+títeres NCIP000 títere
+título NCMS000 título
+títulos NCMP000 título

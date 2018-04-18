@@ -1,0 +1,6 @@
+vírgenes AGIP000 virgen
+vírgenes AGIP000 virgen
+vítreo AGMS000 vítreo
+vítreos AGMP000 vítreo
+vítrea AGFS000 vítreo
+vítreas AGFP000 vítreo

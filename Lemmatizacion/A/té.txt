@@ -1,0 +1,8 @@
+técnico AGMS000 técnico
+técnicos AGMP000 técnico
+técnica AGFS000 técnico
+técnicas AGFP000 técnico
+térmico AGMS000 térmico
+térmicos AGMP000 térmico
+térmica AGFS000 térmico
+térmicas AGFP000 térmico

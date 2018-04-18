@@ -1,0 +1,6 @@
+rábano NCMS000 rábano
+rábanos NCMP000 rábano
+ráfaga NCFS000 ráfaga
+ráfagas NCFP000 ráfaga
+rápido NCMS000 rápido
+rápidos NCMP000 rápido

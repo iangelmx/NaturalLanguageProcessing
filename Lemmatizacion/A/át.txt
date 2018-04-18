@@ -1,0 +1,8 @@
+ático AGMS000 ático
+áticos AGMP000 ático
+ática AGFS000 ático
+áticas AGFP000 ático
+átono AGMS000 átono
+átonos AGMP000 átono
+átona AGFS000 átono
+átonas AGFP000 átono

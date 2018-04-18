@@ -1,0 +1,4 @@
+uno PI0FS00 uno
+uno PI0FP00 uno
+uno PI0MS00 uno
+uno PI0MP00 uno

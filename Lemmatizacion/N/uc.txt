@@ -1,0 +1,9 @@
+uciel NP00000 uciel
+ucrania NCFS000 ucrania
+ucranias NCFP000 ucrania
+ucraniana NCFS000 ucraniana
+ucranianas NCFP000 ucraniana
+ucraniano NCMS000 ucraniano
+ucranianos NCMP000 ucraniano
+ucranio NCMS000 ucranio
+ucranios NCMP000 ucranio

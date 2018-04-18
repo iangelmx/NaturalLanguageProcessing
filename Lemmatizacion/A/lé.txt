@@ -1,0 +1,4 @@
+léxico AGMS000 léxico
+léxicos AGMP000 léxico
+léxica AGFS000 léxico
+léxicas AGFP000 léxico

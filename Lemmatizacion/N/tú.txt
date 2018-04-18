@@ -1,0 +1,6 @@
+túmulo NCMS000 túmulo
+túmulos NCMP000 túmulo
+túnel NCMS000 túnel
+túneles NCMP000 túnel
+túnica NCFS000 túnica
+túnicas NCFP000 túnica

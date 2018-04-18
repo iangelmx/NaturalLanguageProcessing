@@ -1,0 +1,15 @@
+jabonoso AGMS000 jabonoso
+jabonosos AGMP000 jabonoso
+jabonosa AGFS000 jabonoso
+jabonosas AGFP000 jabonoso
+jacarandoso AGMS000 jacarandoso
+jacarandosos AGMP000 jacarandoso
+jacarandosa AGFS000 jacarandoso
+jacarandosas AGFP000 jacarandoso
+jactancioso AGMS000 jactancioso
+jactanciosos AGMP000 jactancioso
+jactanciosa AGFS000 jactancioso
+jactanciosas AGFP000 jactancioso
+japoneses AGMP000 japonés
+japonesa AGFS000 japonés
+japonés AGMS000 japonés

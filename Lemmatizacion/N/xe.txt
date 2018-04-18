@@ -1,0 +1,15 @@
+xenia NP00000 xenia
+xenófoba NCFS000 xenófoba
+xenófobas NCFP000 xenófoba
+xenofobia NCFS000 xenofobia
+xenofobias NCFP000 xenofobia
+xenófobo NCMS000 xenófobo
+xenófobos NCMP000 xenófobo
+xenones NCMP000 xenón
+xenón NCMS000 xenón
+xerocopia NCFS000 xerocopia
+xerocopias NCFP000 xerocopia
+xerografía NCFS000 xerografía
+xerografías NCFP000 xerografía
+xerógrafo NCMS000 xerógrafo
+xerógrafos NCMP000 xerógrafo

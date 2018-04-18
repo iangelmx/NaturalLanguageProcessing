@@ -1,0 +1,8 @@
+pía NP00000 pía
+pícara NCFS000 pícara
+pícaras NCFP000 pícara
+pícaro NCMS000 pícaro
+pícaros NCMP000 pícaro
+píldora NCFS000 píldora
+píldoras NCFP000 píldora
+pío NP00000 pío

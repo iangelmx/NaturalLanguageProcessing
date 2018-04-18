@@ -1,0 +1,4 @@
+gástrico AGMS000 gástrico
+gástricos AGMP000 gástrico
+gástrica AGFS000 gástrico
+gástricas AGFP000 gástrico

@@ -1,0 +1,14 @@
+cíclope NCMS000 cíclope
+cíclopes NCMP000 cíclope
+cíngara NCFS000 cíngara
+cíngaras NCFP000 cíngara
+cíngaro NCMS000 cíngaro
+cíngaros NCMP000 cíngaro
+cínica NCFS000 cínica
+cínicas NCFP000 cínica
+cínico NCMS000 cínico
+cínicos NCMP000 cínico
+círculo NCMS000 círculo
+círculos NCMP000 círculo
+cítrico NCMS000 cítrico
+cítricos NCMP000 cítrico

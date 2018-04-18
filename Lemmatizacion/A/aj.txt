@@ -1,0 +1,8 @@
+ajeno AGMS000 ajeno
+ajenos AGMP000 ajeno
+ajena AGFS000 ajeno
+ajenas AGFP000 ajeno
+ajustado AGMS000 ajustado
+ajustados AGMP000 ajustado
+ajustada AGFS000 ajustado
+ajustadas AGFP000 ajustado

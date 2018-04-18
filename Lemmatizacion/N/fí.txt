@@ -1,0 +1,4 @@
+física NCFS000 física
+físicas NCFP000 física
+físico NCMS000 físico
+físicos NCMP000 físico

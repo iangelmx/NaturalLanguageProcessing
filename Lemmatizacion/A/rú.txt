@@ -1,0 +1,4 @@
+rústico AGMS000 rústico
+rústicos AGMP000 rústico
+rústica AGFS000 rústico
+rústicas AGFP000 rústico

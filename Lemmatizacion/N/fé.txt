@@ -1,0 +1,7 @@
+fécula NCFS000 fécula
+féculas NCFP000 fécula
+félix NP00000 félix
+féretro NCMS000 féretro
+féretros NCMP000 féretro
+férula NCFS000 férula
+férulas NCFP000 férula

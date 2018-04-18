@@ -1,0 +1,12 @@
+búcaro NCMS000 búcaro
+búcaros NCMP000 búcaro
+búfalo NCMS000 búfalo
+búfalos NCMP000 búfalo
+búho NCMS000 búho
+búhos NCMP000 búho
+búlgara NCFS000 búlgara
+búlgaras NCFP000 búlgara
+búlgaro NCMS000 búlgaro
+búlgaros NCMP000 búlgaro
+búsqueda NCFS000 búsqueda
+búsquedas NCFP000 búsqueda

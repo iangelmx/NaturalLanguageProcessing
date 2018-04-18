@@ -1,0 +1,4 @@
+yámbico AGMS000 yámbico
+yámbicos AGMP000 yámbico
+yámbica AGFS000 yámbico
+yámbicas AGFP000 yámbico

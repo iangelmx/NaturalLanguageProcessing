@@ -1,0 +1,10 @@
+que PR3CN00 que
+qué PT3CN00 qué
+quien PR3CS00 quien
+quién PT3CS00 quién
+quien PR3CP00 quien
+quién PT3CP00 quién
+quinto P00FS00 quinto
+quinto P00FP00 quinto
+quinto P00MS00 quinto
+quinto P00MP00 quinto

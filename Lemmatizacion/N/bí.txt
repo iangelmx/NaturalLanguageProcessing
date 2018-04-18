@@ -1,0 +1,6 @@
+bígama NCFS000 bígama
+bígamas NCFP000 bígama
+bígamo NCMS000 bígamo
+bígamos NCMP000 bígamo
+bípedo NCMS000 bípedo
+bípedos NCMP000 bípedo

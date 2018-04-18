@@ -1,0 +1,8 @@
+óptico AGMS000 óptico
+ópticos AGMP000 óptico
+óptica AGFS000 óptico
+ópticas AGFP000 óptico
+óptimo AGMS000 óptimo
+óptimos AGMP000 óptimo
+óptima AGFS000 óptimo
+óptimas AGFP000 óptimo

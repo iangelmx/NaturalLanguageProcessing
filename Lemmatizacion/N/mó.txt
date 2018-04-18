@@ -1,0 +1,5 @@
+módulo NCMS000 módulo
+módulos NCMP000 módulo
+mónica NP00000 mónica
+móvil NCMS000 móvil
+móviles NCMP000 móvil

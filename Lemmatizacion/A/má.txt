@@ -1,0 +1,8 @@
+mágico AGMS000 mágico
+mágicos AGMP000 mágico
+mágica AGFS000 mágico
+mágicas AGFP000 mágico
+máximo AGMS000 máximo
+máximos AGMP000 máximo
+máxima AGFS000 máximo
+máximas AGFP000 máximo

@@ -1,0 +1,4 @@
+aquilino AGMS000 aquilino
+aquilinos AGMP000 aquilino
+aquilina AGFS000 aquilino
+aquilinas AGFP000 aquilino

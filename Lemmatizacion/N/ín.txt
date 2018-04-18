@@ -1,0 +1,8 @@
+índice NCMS000 índice
+índices NCMP000 índice
+índole NCMS000 índole
+índoles NCMP000 índole
+ínsula NCFS000 ínsula
+ínsulas NCFP000 ínsula
+íntimo NCMS000 íntimo
+íntimos NCMP000 íntimo

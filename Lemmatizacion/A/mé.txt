@@ -1,0 +1,8 @@
+médico AGMS000 médico
+médicos AGMP000 médico
+médica AGFS000 médico
+médicas AGFP000 médico
+métrico AGMS000 métrico
+métricos AGMP000 métrico
+métrica AGFS000 métrico
+métricas AGFP000 métrico

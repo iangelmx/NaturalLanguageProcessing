@@ -1,0 +1,2 @@
+whisky NCMS000 whisky
+whiskys NCMP000 whisky

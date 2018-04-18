@@ -1,0 +1,11 @@
+ahínco NCMS000 ahínco
+ahíncos NCMP000 ahínco
+ahmed NP00000 ahmed
+ahogada NCFS000 ahogada
+ahogadas NCFP000 ahogada
+ahogado NCMS000 ahogado
+ahogados NCMP000 ahogado
+ahogo NCMS000 ahogo
+ahogos NCMP000 ahogo
+ahorro NCMS000 ahorro
+ahorros NCMP000 ahorro

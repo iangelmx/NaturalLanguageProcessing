@@ -1,0 +1,13 @@
+médica NCFS000 médica
+médicas NCFP000 médica
+médico NCMS000 médico
+médicos NCMP000 médico
+médula NCFS000 médula
+médulas NCFP000 médula
+mérito NCMS000 mérito
+méritos NCMP000 mérito
+método NCMS000 método
+métodos NCMP000 método
+métrica NCFS000 métrica
+métricas NCFP000 métrica
+méxico NP00000 méxico

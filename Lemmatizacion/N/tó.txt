@@ -1,0 +1,8 @@
+tónica NCFS000 tónica
+tónicas NCFP000 tónica
+tónico NCMS000 tónico
+tónicos NCMP000 tónico
+tópico NCMS000 tópico
+tópicos NCMP000 tópico
+tórtolo NCMS000 tórtolo
+tórtolos NCMP000 tórtolo

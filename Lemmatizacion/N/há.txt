@@ -1,0 +1,6 @@
+hábitat NCMS000 hábitat
+hábitates NCMP000 hábitat
+hábito NCMS000 hábito
+hábitos NCMP000 hábito
+hálito NCMS000 hálito
+hálitos NCMP000 hálito

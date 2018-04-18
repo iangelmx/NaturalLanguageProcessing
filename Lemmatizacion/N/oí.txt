@@ -1,0 +1,4 @@
+oída NCFS000 oída
+oídas NCFP000 oída
+oído NCMS000 oído
+oídos NCMP000 oído

@@ -1,0 +1,4 @@
+ebrio AGMS000 ebrio
+ebrios AGMP000 ebrio
+ebria AGFS000 ebrio
+ebrias AGFP000 ebrio

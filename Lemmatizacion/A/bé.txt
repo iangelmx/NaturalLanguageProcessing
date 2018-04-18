@@ -1,0 +1,8 @@
+bélgico AGMS000 bélgico
+bélgicos AGMP000 bélgico
+bélgica AGFS000 bélgico
+bélgicas AGFP000 bélgico
+bélico AGMS000 bélico
+bélicos AGMP000 bélico
+bélica AGFS000 bélico
+bélicas AGFP000 bélico

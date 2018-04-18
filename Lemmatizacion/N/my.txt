@@ -1,0 +1,2 @@
+myriam NP00000 myriam
+myrna NP00000 myrna

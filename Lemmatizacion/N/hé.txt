@@ -1,0 +1,12 @@
+héctor NP00000 héctor
+hégira NCFS000 hégira
+hégiras NCFP000 hégira
+héjira NCFS000 héjira
+héjiras NCFP000 héjira
+hélice NCFS000 hélice
+hélices NCFP000 hélice
+hércules NCMS000 hércules
+hérculeses NCMP000 hércules
+hércules NP00000 hércules
+héroe NCMS000 héroe
+héroes NCMP000 héroe

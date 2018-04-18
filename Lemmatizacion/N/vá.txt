@@ -1,0 +1,8 @@
+válvula NCFS000 válvula
+válvulas NCFP000 válvula
+vándala NCFS000 vándala
+vándalas NCFP000 vándala
+vándalo NCMS000 vándalo
+vándalos NCMP000 vándalo
+vástago NCMS000 vástago
+vástagos NCMP000 vástago

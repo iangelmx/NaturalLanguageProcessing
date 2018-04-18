@@ -1,0 +1,6 @@
+níquel NCMS000 níquel
+níqueles NCMP000 níquel
+níspero NCMS000 níspero
+nísperos NCMP000 níspero
+níspola NCFS000 níspola
+níspolas NCFP000 níspola

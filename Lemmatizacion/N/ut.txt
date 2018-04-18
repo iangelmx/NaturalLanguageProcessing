@@ -1,0 +1,9 @@
+utensilio NCMS000 utensilio
+utensilios NCMP000 utensilio
+utilidad NCFS000 utilidad
+utilidades NCFP000 utilidad
+utilizaciones NCFP000 utilización
+utilización NCFS000 utilización
+utka NP00000 utka
+utopía NCFS000 utopía
+utopías NCFP000 utopía

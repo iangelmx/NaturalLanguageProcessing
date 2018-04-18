@@ -1,0 +1,6 @@
+tal DD0CS00 tal
+tal DD0CP00 tal
+tanto DI3FS00 tanto
+tanto DI3FP00 tanto
+tanto DI3MS00 tanto
+tanto DI3MP00 tanto

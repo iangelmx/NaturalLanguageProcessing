@@ -1,0 +1,6 @@
+lóbulo NCMS000 lóbulo
+lóbulos NCMP000 lóbulo
+lógica NCFS000 lógica
+lógicas NCFP000 lógica
+lógico NCMS000 lógico
+lógicos NCMP000 lógico

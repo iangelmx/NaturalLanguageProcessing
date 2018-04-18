@@ -1,0 +1,6 @@
+ugandeses AGMP000 ugandés
+ugandesa AGFS000 ugandés
+ugandés AGMS000 ugandés
+ugrofineses AGMP000 ugrofinés
+ugrofinesa AGFS000 ugrofinés
+ugrofinés AGMS000 ugrofinés

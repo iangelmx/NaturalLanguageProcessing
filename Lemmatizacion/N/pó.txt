@@ -1,0 +1,10 @@
+póliza NCFS000 póliza
+pólizas NCFP000 póliza
+pólvora NCFS000 pólvora
+pólvoras NCFP000 pólvora
+pómeces NCFP000 pómez
+pómez NCFS000 pómez
+pómulo NCMS000 pómulo
+pómulos NCMP000 pómulo
+pórtico NCMS000 pórtico
+pórticos NCMP000 pórtico

@@ -1,0 +1,4 @@
+ático NCMS000 ático
+áticos NCMP000 ático
+átomo NCMS000 átomo
+átomos NCMP000 átomo

@@ -1,0 +1,8 @@
+ugandeses NCMP000 ugandés
+ugandés NCMS000 ugandés
+ugandesa NCFS000 ugandesa
+ugandesas NCFP000 ugandesa
+ugrofineses NCMP000 ugrofinés
+ugrofinés NCMS000 ugrofinés
+ugrofinesa NCFS000 ugrofinesa
+ugrofinesas NCFP000 ugrofinesa

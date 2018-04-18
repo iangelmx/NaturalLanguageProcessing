@@ -1,0 +1,4 @@
+aéreo AGMS000 aéreo
+aéreos AGMP000 aéreo
+aérea AGFS000 aéreo
+aéreas AGFP000 aéreo

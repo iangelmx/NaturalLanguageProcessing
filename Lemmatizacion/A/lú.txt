@@ -1,0 +1,12 @@
+lúbrico AGMS000 lúbrico
+lúbricos AGMP000 lúbrico
+lúbrica AGFS000 lúbrico
+lúbricas AGFP000 lúbrico
+lúcido AGMS000 lúcido
+lúcidos AGMP000 lúcido
+lúcida AGFS000 lúcido
+lúcidas AGFP000 lúcido
+lúgubre AGIS000 lúgubre
+lúgubres AGIP000 lúgubre
+lúgubre AGIS000 lúgubre
+lúgubres AGIP000 lúgubre

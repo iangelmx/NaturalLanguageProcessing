@@ -1,0 +1,12 @@
+álamo NCMS000 álamo
+álamos NCMP000 álamo
+álbum NCMS000 álbum
+álbumes NCMP000 álbum
+álbum NCMS000 álbum
+álbums NCMP000 álbum
+álcali NCMS000 álcali
+álcalis NCMP000 álcali
+álgebra NCFS000 álgebra
+álgebras NCFP000 álgebra
+áloe NCMS000 áloe
+áloes NCMP000 áloe

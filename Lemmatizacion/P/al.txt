@@ -1,0 +1,6 @@
+algo PI0CN00 algo
+alguien PI0CN00 alguien
+alguno PI3FS00 alguno
+alguno PI3FP00 alguno
+alguno PI3MS00 alguno
+alguno PI3MP00 alguno

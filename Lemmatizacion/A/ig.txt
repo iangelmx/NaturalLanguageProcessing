@@ -1,0 +1,16 @@
+ignominioso AGMS000 ignominioso
+ignominiosos AGMP000 ignominioso
+ignominiosa AGFS000 ignominioso
+ignominiosas AGFP000 ignominioso
+ignorado AGMS000 ignorado
+ignorados AGMP000 ignorado
+ignorada AGFS000 ignorado
+ignoradas AGFP000 ignorado
+ignorante AGIS000 ignorante
+ignorantes AGIP000 ignorante
+ignorante AGIS000 ignorante
+ignorantes AGIP000 ignorante
+igual AGIS000 igual
+iguales AGIP000 igual
+igual AGIS000 igual
+iguales AGIP000 igual

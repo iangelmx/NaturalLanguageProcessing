@@ -1,0 +1,12 @@
+sólido AGMS000 sólido
+sólidos AGMP000 sólido
+sólida AGFS000 sólido
+sólidas AGFP000 sólido
+sónico AGMS000 sónico
+sónicos AGMP000 sónico
+sónica AGFS000 sónico
+sónicas AGFP000 sónico
+sórdido AGMS000 sórdido
+sórdidos AGMP000 sórdido
+sórdida AGFS000 sórdido
+sórdidas AGFP000 sórdido

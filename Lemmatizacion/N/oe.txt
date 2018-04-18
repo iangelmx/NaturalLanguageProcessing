@@ -1,0 +1,2 @@
+oeste NCMS000 oeste
+oestes NCMP000 oeste

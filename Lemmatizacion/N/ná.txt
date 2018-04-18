@@ -1,0 +1,11 @@
+nácar NCMS000 nácar
+nácares NCMP000 nácar
+náilones NCMP000 nailon
+náufraga NCFS000 náufraga
+náufragas NCFP000 náufraga
+náufrago NCMS000 náufrago
+náufragos NCMP000 náufrago
+náusea NCFS000 náusea
+náuseas NCFP000 náusea
+náutica NCFS000 náutica
+náuticas NCFP000 náutica

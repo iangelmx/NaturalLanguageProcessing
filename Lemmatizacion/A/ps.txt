@@ -1,0 +1,16 @@
+psicológico AGMS000 psicológico
+psicológicos AGMP000 psicológico
+psicológica AGFS000 psicológico
+psicológicas AGFP000 psicológico
+psiquiatra AGIS000 psiquiatra
+psiquiatras AGIP000 psiquiatra
+psiquiatra AGIS000 psiquiatra
+psiquiatras AGIP000 psiquiatra
+psiquiátrico AGMS000 psiquiátrico
+psiquiátricos AGMP000 psiquiátrico
+psiquiátrica AGFS000 psiquiátrico
+psiquiátricas AGFP000 psiquiátrico
+psíquico AGMS000 psíquico
+psíquicos AGMP000 psíquico
+psíquica AGFS000 psíquico
+psíquicas AGFP000 psíquico

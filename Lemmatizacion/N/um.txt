@@ -1,0 +1,4 @@
+umbelíferas NCFP000 umbelíferas
+umbelina NP00000 umbelina
+umbral NCMS000 umbral
+umbrales NCMP000 umbral

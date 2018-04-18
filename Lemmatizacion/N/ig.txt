@@ -1,0 +1,13 @@
+iglesia NCFS000 iglesia
+iglesias NCFP000 iglesia
+ignacia NP00000 ignacia
+ignacio NP00000 ignacio
+ignominia NCFS000 ignominia
+ignominias NCFP000 ignominia
+ignorancia NCFS000 ignorancia
+ignorancias NCFP000 ignorancia
+igor NP00000 igor
+igual NCIS000 igual
+iguales NCIP000 igual
+igualdad NCFS000 igualdad
+igualdades NCFP000 igualdad

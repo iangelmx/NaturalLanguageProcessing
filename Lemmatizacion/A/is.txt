@@ -1,0 +1,15 @@
+islandeses AGMP000 islandés
+islandesa AGFS000 islandés
+islandés AGMS000 islandés
+isleño AGMS000 isleño
+isleños AGMP000 isleño
+isleña AGFS000 isleño
+isleñas AGFP000 isleño
+israelí AGIS000 israelí
+israelíes AGIP000 israelí
+israelí AGIS000 israelí
+israelíes AGIP000 israelí
+israelita AGIS000 israelita
+israelitas AGIP000 israelita
+israelita AGIS000 israelita
+israelitas AGIP000 israelita

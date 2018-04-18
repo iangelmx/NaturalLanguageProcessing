@@ -1,0 +1,6 @@
+fórmula NCFS000 fórmula
+fórmulas NCFP000 fórmula
+fósforo NCMS000 fósforo
+fósforos NCMP000 fósforo
+fósil NCMS000 fósil
+fósiles NCMP000 fósil

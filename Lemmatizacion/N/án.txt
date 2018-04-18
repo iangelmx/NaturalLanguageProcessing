@@ -1,0 +1,14 @@
+áncora NCFS000 áncora
+áncoras NCFP000 áncora
+ánfora NCFS000 ánfora
+ánforas NCFP000 ánfora
+ángel NCMS000 ángel
+ángeles NCMP000 ángel
+ángela NP00000 ángela
+ángeles NP00000 ángeles
+ángulo NCMS000 ángulo
+ángulos NCMP000 ángulo
+ánima NCFS000 ánima
+ánimas NCFP000 ánima
+ánimo NCMS000 ánimo
+ánimos NCMP000 ánimo

@@ -1,0 +1,16 @@
+tácito AGMS000 tácito
+tácitos AGMP000 tácito
+tácita AGFS000 tácito
+tácitas AGFP000 tácito
+táctico AGMS000 táctico
+tácticos AGMP000 táctico
+táctica AGFS000 táctico
+tácticas AGFP000 táctico
+táctil AGIS000 táctil
+táctiles AGIP000 táctil
+táctil AGIS000 táctil
+táctiles AGIP000 táctil
+tártaro AGMS000 tártaro
+tártaros AGMP000 tártaro
+tártara AGFS000 tártaro
+tártaras AGFP000 tártaro

@@ -1,0 +1,12 @@
+ejecutivo AGMS000 ejecutivo
+ejecutivos AGMP000 ejecutivo
+ejecutiva AGFS000 ejecutivo
+ejecutivas AGFP000 ejecutivo
+ejecutor AGMS000 ejecutor
+ejecutores AGMP000 ejecutor
+ejecutora AGFS000 ejecutor
+ejecutoras AGFP000 ejecutor
+ejemplar AGIS000 ejemplar
+ejemplares AGIP000 ejemplar
+ejemplar AGIS000 ejemplar
+ejemplares AGIP000 ejemplar

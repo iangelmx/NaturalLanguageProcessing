@@ -1,0 +1,5 @@
+axel NP00000 axel
+axila NCFS000 axila
+axilas NCFP000 axila
+axioma NCMS000 axioma
+axiomas NCMP000 axioma

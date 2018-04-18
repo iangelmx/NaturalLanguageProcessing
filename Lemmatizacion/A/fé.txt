@@ -1,0 +1,12 @@
+férreo AGMS000 férreo
+férreos AGMP000 férreo
+férrea AGFS000 férreo
+férreas AGFP000 férreo
+fértil AGIS000 fértil
+fértiles AGIP000 fértil
+fértil AGIS000 fértil
+fértiles AGIP000 fértil
+fétido AGMS000 fétido
+fétidos AGMP000 fétido
+fétida AGFS000 fétido
+fétidas AGFP000 fétido

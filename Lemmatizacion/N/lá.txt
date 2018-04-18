@@ -1,0 +1,17 @@
+lágrima NCFS000 lágrima
+lágrimas NCFP000 lágrima
+lámina NCFS000 lámina
+láminas NCFP000 lámina
+lámpara NCFS000 lámpara
+lámparas NCFP000 lámpara
+lápices NCMP000 lápiz
+lápida NCFS000 lápida
+lápidas NCFP000 lápida
+lápiz NCMS000 lápiz
+lástima NCFS000 lástima
+lástimas NCFP000 lástima
+látex NCMS000 látex
+látexes NCMP000 látex
+látigo NCMS000 látigo
+látigos NCMP000 látigo
+lázaro NP00000 lázaro

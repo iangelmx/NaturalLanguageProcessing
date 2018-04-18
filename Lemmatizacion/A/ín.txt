@@ -1,0 +1,12 @@
+ínfimo AGMS000 ínfimo
+ínfimos AGMP000 ínfimo
+ínfima AGFS000 ínfimo
+ínfimas AGFP000 ínfimo
+íntegro AGMS000 íntegro
+íntegros AGMP000 íntegro
+íntegra AGFS000 íntegro
+íntegras AGFP000 íntegro
+íntimo AGMS000 íntimo
+íntimos AGMP000 íntimo
+íntima AGFS000 íntimo
+íntimas AGFP000 íntimo

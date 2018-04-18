@@ -1,0 +1,4 @@
+iodo NCMS000 iodo
+iodos NCMP000 iodo
+iona NP00000 iona
+ionatán NP00000 ionatán

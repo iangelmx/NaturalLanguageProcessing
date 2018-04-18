@@ -1,0 +1,5 @@
+mi PS0P000 mi
+mismo P00FS00 mismo
+mismo P00FP00 mismo
+mismo P00MS00 mismo
+mismo P00MP00 mismo

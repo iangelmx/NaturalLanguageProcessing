@@ -1,0 +1,12 @@
+zulú AGIS000 zulú
+zulúes AGIP000 zulú
+zulú AGIS000 zulú
+zulúes AGIP000 zulú
+zumbador AGMS000 zumbador
+zumbadores AGMP000 zumbador
+zumbadora AGFS000 zumbador
+zumbadoras AGFP000 zumbador
+zurdo AGMS000 zurdo
+zurdos AGMP000 zurdo
+zurda AGFS000 zurdo
+zurdas AGFP000 zurdo

@@ -1,0 +1,12 @@
+utilitario AGMS000 utilitario
+utilitarios AGMP000 utilitario
+utilitaria AGFS000 utilitario
+utilitarias AGFP000 utilitario
+utópico AGMS000 utópico
+utópicos AGMP000 utópico
+utópica AGFS000 utópico
+utópicas AGFP000 utópico
+utopista AGIS000 utopista
+utopistas AGIP000 utopista
+utopista AGIS000 utopista
+utopistas AGIP000 utopista

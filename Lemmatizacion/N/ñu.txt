@@ -1,0 +1,4 @@
+ñu NCMS000 ñu
+ñus NCMP000 ñu
+ñudo NCMS000 ñudo
+ñudos NCMP000 ñudo

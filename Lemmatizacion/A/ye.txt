@@ -1,0 +1,12 @@
+yemení AGIS000 yemení
+yemeníes AGIP000 yemení
+yemení AGIS000 yemení
+yemeníes AGIP000 yemení
+yermo AGMS000 yermo
+yermos AGMP000 yermo
+yerma AGFS000 yermo
+yermas AGFP000 yermo
+yerto AGMS000 yerto
+yertos AGMP000 yerto
+yerta AGFS000 yerto
+yertas AGFP000 yerto

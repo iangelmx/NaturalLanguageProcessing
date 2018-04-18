@@ -1,0 +1,12 @@
+epidémico AGMS000 epidémico
+epidémicos AGMP000 epidémico
+epidémica AGFS000 epidémico
+epidémicas AGFP000 epidémico
+epígono AGMS000 epígono
+epígonos AGMP000 epígono
+epígona AGFS000 epígono
+epígonas AGFP000 epígono
+episódico AGMS000 episódico
+episódicos AGMP000 episódico
+episódica AGFS000 episódico
+episódicas AGFP000 episódico

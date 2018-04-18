@@ -1,0 +1,8 @@
+lácteo AGMS000 lácteo
+lácteos AGMP000 lácteo
+láctea AGFS000 lácteo
+lácteas AGFP000 lácteo
+lánguido AGMS000 lánguido
+lánguidos AGMP000 lánguido
+lánguida AGFS000 lánguido
+lánguidas AGFP000 lánguido

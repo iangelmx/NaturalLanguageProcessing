@@ -1,0 +1,6 @@
+húngara NCFS000 húngara
+húngaras NCFP000 húngara
+húngaro NCMS000 húngaro
+húngaros NCMP000 húngaro
+húsar NCMS000 húsar
+húsares NCMP000 húsar

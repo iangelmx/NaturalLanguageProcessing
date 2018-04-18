@@ -1,0 +1,8 @@
+izquierdo AGMS000 izquierdo
+izquierdos AGMP000 izquierdo
+izquierda AGFS000 izquierdo
+izquierdas AGFP000 izquierdo
+izquierdista AGIS000 izquierdista
+izquierdistas AGIP000 izquierdista
+izquierdista AGIS000 izquierdista
+izquierdistas AGIP000 izquierdista

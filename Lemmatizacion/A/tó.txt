@@ -1,0 +1,16 @@
+tónico AGMS000 tónico
+tónicos AGMP000 tónico
+tónica AGFS000 tónico
+tónicas AGFP000 tónico
+tópico AGMS000 tópico
+tópicos AGMP000 tópico
+tópica AGFS000 tópico
+tópicas AGFP000 tópico
+tórrido AGMS000 tórrido
+tórridos AGMP000 tórrido
+tórrida AGFS000 tórrido
+tórridas AGFP000 tórrido
+tóxico AGMS000 tóxico
+tóxicos AGMP000 tóxico
+tóxica AGFS000 tóxico
+tóxicas AGFP000 tóxico

@@ -1,0 +1,14 @@
+débora NP00000 débora
+déborah NP00000 déborah
+década NCFS000 década
+décadas NCFP000 década
+décima NCFS000 décima
+décimas NCFP000 décima
+décimo NCMS000 décimo
+décimos NCMP000 décimo
+dédalo NP00000 dédalo
+déficit NCMS000 déficit
+déficites NCMP000 déficit
+délida NP00000 délida
+déspota NCIS000 déspota
+déspotas NCIP000 déspota

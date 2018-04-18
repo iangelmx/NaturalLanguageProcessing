@@ -1,0 +1,12 @@
+árabe AGIS000 árabe
+árabes AGIP000 árabe
+árabe AGIS000 árabe
+árabes AGIP000 árabe
+árido AGMS000 árido
+áridos AGMP000 árido
+árida AGFS000 árido
+áridas AGFP000 árido
+ártico AGMS000 ártico
+árticos AGMP000 ártico
+ártica AGFS000 ártico
+árticas AGFP000 ártico

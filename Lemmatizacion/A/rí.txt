@@ -1,0 +1,8 @@
+rígido AGMS000 rígido
+rígidos AGMP000 rígido
+rígida AGFS000 rígido
+rígidas AGFP000 rígido
+rítmico AGMS000 rítmico
+rítmicos AGMP000 rítmico
+rítmica AGFS000 rítmico
+rítmicas AGFP000 rítmico

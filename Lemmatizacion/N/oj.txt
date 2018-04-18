@@ -1,0 +1,14 @@
+ojal NCMS000 ojal
+ojales NCMP000 ojal
+ojeada NCFS000 ojeada
+ojeadas NCFP000 ojeada
+ojeras NCFP000 ojeras
+ojeriza NCFS000 ojeriza
+ojerizas NCFP000 ojeriza
+ojete NCMS000 ojete
+ojetes NCMP000 ojete
+ojillos NCMP000 ojillos
+ojiva NCFS000 ojiva
+ojivas NCFP000 ojiva
+ojo NCMS000 ojo
+ojos NCMP000 ojo

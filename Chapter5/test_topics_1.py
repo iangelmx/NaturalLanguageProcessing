@@ -133,14 +133,15 @@ transaccion = []
 transaccion.append("START TRANSACTION;")
 transaccion.append("TRUNCATE tokens_tags;")
 for elemento in tokensEtiquetados:
-	transaccion.append("INSERT INTO tokens_tags(token, tag) VALUES('"+str(elemento[0])+"','"+str(elemento[1])+"');")
+	if elemento[0] != None or elemento[1] != None:
+		transaccion.append("INSERT INTO tokens_tags(token, tag) VALUES('"+str(elemento[0])+"','"+str(elemento[1])+"');")
 transaccion.append("COMMIT;")
 
 
 
-#print(doTransaction(transaccion))
-input("Va a lematizar...")
-#lematizaBDArts(tokensEtiquetados)
+print(doTransaction(transaccion))
+##input("Va a lematizar...")
+##lematizaBDArts(tokensEtiquetados)
 
 texto = doQuery("SELECT token FROM tokens_tags ORDER BY id ASC;")
 
@@ -154,12 +155,12 @@ for item in texto:
 		cadenaArt2+=item[0]+" "
 	if item[0]=='¡bah':
 		flag=True
-print("Cadena1")
+'''print("Cadena1")
 input(cadenaArt1)
 
 input()
 print("Cadena2")
-input(cadenaArt2)
+input(cadenaArt2)'''
 
 
 

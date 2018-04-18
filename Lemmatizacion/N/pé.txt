@@ -1,0 +1,10 @@
+péndulo NCMS000 péndulo
+péndulos NCMP000 péndulo
+pérdida NCFS000 pérdida
+pérdidas NCFP000 pérdida
+pértiga NCFS000 pértiga
+pértigas NCFP000 pértiga
+pésame NCMS000 pésame
+pésames NCMP000 pésame
+pétalo NCMS000 pétalo
+pétalos NCMP000 pétalo

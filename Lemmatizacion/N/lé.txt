@@ -1,0 +1,4 @@
+légamo NCMS000 légamo
+légamos NCMP000 légamo
+léxico NCMS000 léxico
+léxicos NCMP000 léxico

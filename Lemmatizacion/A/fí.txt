@@ -1,0 +1,4 @@
+físico AGMS000 físico
+físicos AGMP000 físico
+física AGFS000 físico
+físicas AGFP000 físico

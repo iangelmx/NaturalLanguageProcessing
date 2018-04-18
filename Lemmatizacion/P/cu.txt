@@ -1,0 +1,16 @@
+cual PR3CS00 cual
+cuál PT3CS00 cuál
+cual PR3CP00 cual
+cuál PT3CP00 cuál
+cualquiera PI3CS00 cualquiera
+cuanto PR0FS00 cuanto
+cuánto PT3FS00 cuánto
+cuanto PR0FP00 cuanto
+cuánto PT3FP00 cuánto
+cuánto PT3MS00 cuánto
+cuantos PR0MP00 cuanto
+cuántos PT3MP00 cuánto
+cuyo PR3FS00 cuyo
+cuyo PR3FP00 cuyo
+cuyo PR3MS00 cuyo
+cuyo PR3MP00 cuyo

@@ -1,0 +1,8 @@
+válido AGMS000 válido
+válidos AGMP000 válido
+válida AGFS000 válido
+válidas AGFP000 válido
+vándalo AGMS000 vándalo
+vándalos AGMP000 vándalo
+vándala AGFS000 vándalo
+vándalas AGFP000 vándalo

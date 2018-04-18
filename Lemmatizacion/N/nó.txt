@@ -1,0 +1,8 @@
+nómada NCIS000 nómada
+nómadas NCIP000 nómada
+nómina NCFS000 nómina
+nóminas NCFP000 nómina
+nórdica NCFS000 nórdica
+nórdicas NCFP000 nórdica
+nórdico NCMS000 nórdico
+nórdicos NCMP000 nórdico

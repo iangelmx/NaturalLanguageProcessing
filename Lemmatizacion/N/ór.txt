@@ -1,0 +1,8 @@
+órbita NCFS000 órbita
+órbitas NCFP000 órbita
+órdenes NCFP000 orden
+órdenes NCMP000 orden
+órdiga NCMS000 órdiga
+órdigas NCMP000 órdiga
+órgano NCMS000 órgano
+órganos NCMP000 órgano

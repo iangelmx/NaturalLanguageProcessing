@@ -1,0 +1,8 @@
+múltiplo NCMS000 múltiplo
+múltiplos NCMP000 múltiplo
+músculo NCMS000 músculo
+músculos NCMP000 músculo
+música NCFS000 música
+músicas NCFP000 música
+músico NCMS000 músico
+músicos NCMP000 músico

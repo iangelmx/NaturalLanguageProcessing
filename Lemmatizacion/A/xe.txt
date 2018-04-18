@@ -1,0 +1,8 @@
+xenófobo AGMS000 xenófobo
+xenófobos AGMP000 xenófobo
+xenófoba AGFS000 xenófobo
+xenófobas AGFP000 xenófobo
+xerográfico AGMS000 xerográfico
+xerográficos AGMP000 xerográfico
+xerográfica AGFS000 xerográfico
+xerográficas AGFP000 xerográfico

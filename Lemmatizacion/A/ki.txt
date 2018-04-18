@@ -1,0 +1,4 @@
+kilométrico AGMS000 kilométrico
+kilométricos AGMP000 kilométrico
+kilométrica AGFS000 kilométrico
+kilométricas AGFP000 kilométrico

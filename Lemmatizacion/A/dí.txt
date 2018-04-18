@@ -1,0 +1,4 @@
+díscolo AGMS000 díscolo
+díscolos AGMP000 díscolo
+díscola AGFS000 díscolo
+díscolas AGFP000 díscolo

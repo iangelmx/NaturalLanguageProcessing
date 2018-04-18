@@ -1,0 +1,8 @@
+récord NCMS000 récord
+récordes NCMP000 récord
+régimen NCMS000 régimen
+régulo NP00000 régulo
+réplica NCFS000 réplica
+réplicas NCFP000 réplica
+réquiem NCMS000 réquiem
+réquiemes NCMP000 réquiem

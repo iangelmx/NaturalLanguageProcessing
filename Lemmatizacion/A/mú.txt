@@ -1,0 +1,12 @@
+múltiplo AGMS000 múltiplo
+múltiplos AGMP000 múltiplo
+múltipla AGFS000 múltiplo
+múltiplas AGFP000 múltiplo
+múltiple AGIS000 múltiple
+múltiples AGIP000 múltiple
+múltiple AGIS000 múltiple
+múltiples AGIP000 múltiple
+músico AGMS000 músico
+músicos AGMP000 músico
+música AGFS000 músico
+músicas AGFP000 músico
