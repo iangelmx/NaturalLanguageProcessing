@@ -22,6 +22,7 @@ def lematizaBDArts(tokensEtiquetados):
 	transaccion.append("START TRANSACTION;")
 	cadena=lemmas.readline()
 	conteo=0
+	listaFinal = []
 	while cadena != '':
 		try:
 			cadena = cadena.strip()
@@ -31,7 +32,7 @@ def lematizaBDArts(tokensEtiquetados):
 			lemma = cadena[-1]
 			forma = forma.replace('#', '')
 			#print("lemma: "+lemma+ " | TAG: "+ etiqueta +" | Forma: "+forma)
-
+			'''
 			if etiqueta[0] == 'a' or etiqueta[0] =='A':
 				transaccion.append("UPDATE tokens_tags SET token='"+lemma+"' WHERE token= '"+forma+"' AND (tag LIKE 'A%' );")
 			elif etiqueta[0] == 'r' or etiqueta[0] =='R':
@@ -51,29 +52,42 @@ def lematizaBDArts(tokensEtiquetados):
 			elif etiqueta[0] == 'i' or etiqueta[0] =='I':
 				transaccion.append("UPDATE tokens_tags SET token='"+lemma+"' WHERE token= '"+forma+"' AND (tag LIKE 'I%' );")
 			elif etiqueta[0] == 'f' or etiqueta[0] =='F':
-				transaccion.append("UPDATE tokens_tags SET token='"+lemma+"' WHERE token= '"+forma+"' AND (tag LIKE 'F%' );")
+				transaccion.append("UPDATE tokens_tags SET token='"+lemma+"' WHERE token= '"+forma+"' AND (tag LIKE 'F%' );") '''
+			'''for lista in tokensEtiquetados:
+				#print(lista)
+				if (etiqueta[0] == 'a' or etiqueta[0] =='A') and (str(lista[1][0])== 'a' or str(lista[1][0]) =='A') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 'r' or etiqueta[0] =='R') and (str(lista[1][0])== 'r' or str(lista[1][0]) =='R') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 'n' or etiqueta[0] =='N') and (str(lista[1][0])== 'n' or str(lista[1][0]) =='N') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 'v' or etiqueta[0] =='V') and (str(lista[1][0])== 'v' or str(lista[1][0]) =='V') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 'p' or etiqueta[0] =='P') and (str(lista[1][0])== 'p' or str(lista[1][0]) =='P') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif ( etiqueta[0] == 'd' or etiqueta[0] =='D' or etiqueta[0] == 't' or etiqueta[0] =='T' ) and (str(lista[1][0])== 'd' or str(lista[1][0]) =='D' or str(lista[1][0])== 't' or str(lista[1][0]) =='T') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 's' or etiqueta[0] =='S') and (str(lista[1][0])== 's' or str(lista[1][0]) =='S') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 'c' or etiqueta[0] =='C') and (str(lista[1][0])== 'c' or str(lista[1][0]) =='C') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 'i' or etiqueta[0] =='I') and (str(lista[1][0])== 'i' or str(lista[1][0]) =='I') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				elif (etiqueta[0] == 'f' or etiqueta[0] =='F') and (str(lista[1][0])== 'f' or str(lista[1][0]) =='F') and (lista[0] == forma):
+					#lista[0] = lemma
+					listaFinal.append([lemma, lista[1]])
+				else:
+					listaFinal.append(lista[0])'''
 
-			for lista in tokensEtiquetados:
-				if (etiqueta[0] == 'a' or etiqueta[0] =='A') and (lista[1][0]== 'a' or lista[1][0] =='A') and (lista[0] == forma):
-					lista[0] = lemma
-				elif (etiqueta[0] == 'r' or etiqueta[0] =='R') and (lista[1][0]== 'r' or lista[1][0] =='R') and (lista[0] == forma):
-					lista[0] = lemma
-				elif (etiqueta[0] == 'n' or etiqueta[0] =='N') and (lista[1][0]== 'n' or lista[1][0] =='N') and (lista[0] == forma):
-					lista[0] = lemma
-				elif (etiqueta[0] == 'v' or etiqueta[0] =='V') and (lista[1][0]== 'v' or lista[1][0] =='V') and (lista[0] == forma):
-					lista[0] = lemma
-				elif (etiqueta[0] == 'p' or etiqueta[0] =='P') and (lista[1][0]== 'p' or lista[1][0] =='P') and (lista[0] == forma):
-					lista[0] = lemma
-				elif (etiqueta[0] == 'd' or etiqueta[0] =='D') or etiqueta[0] == 't' or etiqueta[0] =='T') and (lista[1][0]== 'p' or lista[1][0] =='P') and (lista[0] == forma):
-					transaccion.append("UPDATE tokens_tags SET token='"+lemma+"' WHERE token= '"+forma+"' AND (tag LIKE 'D%' OR tag LIKE 'T%');")
-				elif etiqueta[0] == 's' or etiqueta[0] =='S':
-					lista[0] = lemma
-				elif etiqueta[0] == 'c' or etiqueta[0] =='C':
-					lista[0] = lemma
-				elif etiqueta[0] == 'i' or etiqueta[0] =='I':
-					lista[0] = lemma
-				elif etiqueta[0] == 'f' or etiqueta[0] =='F':
-					lista[0] = lemma
 
 
 			if conteo % 100000 == 0:
@@ -81,11 +95,15 @@ def lematizaBDArts(tokensEtiquetados):
 			cadena=lemmas.readline()
 			conteo+=1
 		except Exception as ex:
-			print(ex)
+			#print(ex)
 			cadena=lemmas.readline()
 			pass
+	for elem in listaFinal:
+		transaccion.append("INSERT INTO tags2 (token, tag) VALUES('"+elem[0]+"', '"+elem[1]+"')")
 	transaccion.append("COMMIT;")
 	print(doTransaction(transaccion))
+
+
 
 #lematizaBDArts()
 
@@ -120,16 +138,33 @@ transaccion.append("COMMIT;")
 
 
 
-print(doTransaction(transaccion))
-lematizaBDArts(tokensEtiquetados)
+#print(doTransaction(transaccion))
+input("Va a lematizar...")
+#lematizaBDArts(tokensEtiquetados)
 
-input("¿¿¿¿???????")
+texto = doQuery("SELECT token FROM tokens_tags ORDER BY id ASC;")
+
+cadenaArt1 =""
+cadenaArt2 =""
+flag=False
+for item in texto:
+	if flag==False:
+		cadenaArt1+=item[0]+" "
+	else:
+		cadenaArt2+=item[0]+" "
+	if item[0]=='¡bah':
+		flag=True
+print("Cadena1")
+input(cadenaArt1)
+
 input()
+print("Cadena2")
+input(cadenaArt2)
 
 
 
-
-doc_complete = documentos
+#doc_complete = documentos
+doc_complete = [cadenaArt1, cadenaArt2]
 
 # compile documents
 ######doc_complete = [doc1, doc2, doc3, doc4, doc5]
