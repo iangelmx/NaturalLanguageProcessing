@@ -1,6 +1,7 @@
 import nltk
 from _pickle import load
 from bs4   import BeautifulSoup
+from mariamysqlib import *
 
 '''This module lemmatizes tagged sentences from the file 'example.htm'
 which is a small part of the file 'e960401.htm' 
@@ -82,9 +83,27 @@ def tagSents(fname):
 if __name__=='__main__':
     lemmas=lemmatizeTaggedSents('e960401.htm')
 
-    archivo = open('salidaFIN.txt', "w")
-    archivo.write(str(lemmas))
-    archivo.close()
+    """entrada = open("salidaFIN.txt", mode="r", encoding="utf-8")
+    rawTokens = entrada.read()
+    entrada.close()
+
+    rawTokens=rawTokens.replace(',','').replace("'", '')
+    rawTokens=rawTokens.replace('[','').replace(']', '')
+    rawTokens = rawTokens.split()"""
+
+    transaccion=[]
+    transaccion.append("START TRANSACTION;")
+    transaccion.append("TRUNCATE tokens_Lemmatizados;")
+    for lemma in lemmas:
+        transaccion.append("INSERT into tokens_Lemmatizados(token) VALUES('"+lemma+"')")
+    transaccion.append("COMMIT;")
+
+    resul = doTransaction(transaccion)
+    print(resul)
+
+    #archivo = open('salidaFIN.txt', "w")
+    #archivo.write(str(lemmas))
+    #archivo.close()
    
   
     
