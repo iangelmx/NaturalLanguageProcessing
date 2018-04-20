@@ -29,8 +29,7 @@ def getLemma(wordform, pos):
     lemma=''
     if len(wordform)==1:
         try:
-            f=open('C:\\Users\\OLGA\\Pprog_work\\NLP_2018_2_programs\\Lemmatization\\'
-                   +pos.upper()+'\\'+wordform[0]+'.txt')
+            f=open(pos.upper()+'\\'+wordform[0]+'.txt')
             lines=f.readlines()
             f.close()
             for line in lines:
@@ -42,8 +41,7 @@ def getLemma(wordform, pos):
             pass
     elif len(wordform)>1:
         try:
-            f=open('C:\\Users\\OLGA\\Pprog_work\\NLP_2018_2_programs\\Lemmatization\\'
-                    +pos.upper()+'\\'+wordform[0:2]+'.txt')
+            f=open(pos.upper()+'\\'+wordform[0:2]+'.txt')
             lines=f.readlines()
             f.close()
             for line in lines:
@@ -82,7 +80,11 @@ def tagSents(fname):
  
 '''test if run as application'''
 if __name__=='__main__':
-    lemmas=lemmatizeTaggedSents('example.htm')
+    lemmas=lemmatizeTaggedSents('e960401.htm')
+
+    archivo = open('salidaFIN.txt', "w")
+    archivo.write(str(lemmas))
+    archivo.close()
    
   
     
