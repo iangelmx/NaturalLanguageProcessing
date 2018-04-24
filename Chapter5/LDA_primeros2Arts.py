@@ -139,9 +139,9 @@ transaccion.append("COMMIT;")
 
 
 #print(doTransaction(transaccion))
-input("Va a lematizar...")
+"""input("Va a lematizar...")
 lematizaBDArts(tokensEtiquetados)
-input("Lematizó")
+input("Lematizó")"""
 
 texto = doQuery("SELECT token FROM tokens_tags ORDER BY id ASC;")
 
@@ -204,8 +204,14 @@ Lda = gensim.models.ldamodel.LdaModel
 
 '''Running and Trainign LDA model on the document term matrix.'''
 ldamodel = Lda(doc_term_matrix, num_topics=5, id2word = dictionary, passes=50)
+resultado = ldamodel.print_topics(num_topics=5, num_words=10)
+#print(ldamodel.print_topics(num_topics=5, num_words=10))
+n=0
+print("\n\nRESULTADO DE LDA:\n")
+for topico in resultado:
+	n+=1
+	print(str(n)+" -> "+str(topico)+"\n")
 
-print(ldamodel.print_topics(num_topics=5, num_words=10))
 
 """ 
 TAREA:
