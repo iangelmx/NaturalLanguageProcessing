@@ -8,11 +8,23 @@ de todas las palabras del archivo e960401.html
 
 from nltk.corpus import PlaintextCorpusReader
 from nltk.text import ConcordanceIndex
+from nltk.tokenize import WordPunctTokenizer
 import nltk.tokenize
 import nltk
 import re
 from pickle import dump
 from pickle import load
+
+def tokenizaFrase(rawText, wordPunct=False):
+	if wordPunct== False:
+		fraseTokenizada = nltk.Text(nltk.word_tokenize(rawText))
+		return fraseTokenizada
+	elif wordPunct==True:
+		fraseTokenizada = WordPunctTokenizer().tokenize(rawText)
+		return fraseTokenizada
+	else:
+		return "Tokenización fuera de catálogo"
+
 
 def tagRawText2POS(listaOraciones):
 	existe=False
@@ -77,10 +89,13 @@ def imprimeElementoDetallesVocabulario(indice):
 	print("Contexto Izq-> "+ str( detallesVocabulario[indice]['contextoIzq'] ) )
 	print("Contexto Der-> "+ str( detallesVocabulario[indice]['contextoDer'] ) )
 
-def getTextTokens(rutaArchivo, keepNumbers=False, backTextString=False):	#Una manera que se me ocurrió de tokenizar. Es precisa en un 96.35%
+def getTextTokens(rutaArchivo, keepNumbers=False, backTextString=False, utf8=False):	#Una manera que se me ocurrió de tokenizar. Es precisa en un 96.35%
 	ruta=rutaArchivo
 	#print("ruta->"+str(ruta))
-	entrada= open(rutaArchivo, mode="r", encoding="utf-8")
+	if utf8 == True:
+		entrada= open(rutaArchivo, mode="r", encoding="utf-8")
+	else:
+		entrada= open(rutaArchivo, "r")
 	abc=entrada.read()
 	abc=abc.lower()
 	tokens = nltk.tokenize.word_tokenize(str(abc))
