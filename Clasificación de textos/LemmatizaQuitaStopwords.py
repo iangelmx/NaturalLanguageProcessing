@@ -4,10 +4,13 @@ from nltk.tokenize import WordPunctTokenizer
 from nltk.corpus import stopwords 
 import sys
 from sklearn.datasets import fetch_20newsgroups
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
+from sklearn.cross_validation import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB
+from sklearn import metrics
 from collections import Counter
 import numpy
 sys.path.insert(0, '../Chapter5')
@@ -29,84 +32,125 @@ def make_Dictionary(train_dir):
     # Paste code for non-word removal here(code snippet is given below) 
     return dictionary
 
-archivo = open("SMS_Spam_Corpus.txt", "r")
-stop = set(stopwords.words('english'))
-wordnet_lemmatizer = WordNetLemmatizer()
-mensaje = archivo.readline()
-
-#tokensGrales = tokenizaFrase(leeArchivo("SMS_Spam_Corpus.txt"), wordPunct=True)
-[tokensGrales, rawText] = getTextTokens("SMS_Spam_Corpus.txt",backTextString=True)
-tokensGrales= set(tokensGrales)
-
-print(":v")
-mensajesLemmasSPAM = []
-mensajesLemmasHAM = []
-mensajesTotales = []
-while mensaje != '':
-	if mensaje:	
-		try:
-			if 'spam' in mensaje.split()[-1]:
-				mensaje=mensaje.replace(',spam', '')
-				fraseTokenizada = tokenizaFrase(mensaje, wordPunct=True)
-				mensajeLemmatizado = []
-				for token in fraseTokenizada:
-					tokenLemmatizado = wordnet_lemmatizer.lemmatize(token, pos='v')
-					mensajeLemmatizado.append(tokenLemmatizado)
-				mensajesLemmasSPAM.append(mensajeLemmatizado)
-				#print("SPAM "+str(mensajeLemmatizado)+"\n")
-			elif 'ham' in mensaje.split()[-1]:
-				mensaje=mensaje.replace(',ham', '')
-				fraseTokenizada = tokenizaFrase(mensaje, wordPunct=True)
-				mensajeLemmatizado = []
-				for token in fraseTokenizada:
-					tokenLemmatizado = wordnet_lemmatizer.lemmatize(token, pos='v')
-					mensajeLemmatizado.append(tokenLemmatizado)
-				mensajesLemmasHAM.append(mensajeLemmatizado)
-				#print("HAM"+str(mensajeLemmatizado)+"\n")
-			else:
-				input("Mensaje con contenido desconocido... ->"+str(mensaje.split()[-1])+ "<-")
-			mensajesTotales.append(mensajeLemmatizado)
-		except Exception as ex:
-			print(ex)
+def prepareTextSMS(rutaArchivo, keepUknownMessages = False, lemmatization = False):
+	uknownMessages = []
+	archivo = open(rutaArchivo, "r")
+	#stop = set(stopwords.words('english'))
+	if lemmatization == True:
+		wordnet_lemmatizer = WordNetLemmatizer()
 	mensaje = archivo.readline()
 
-"""vector = CountVectorizer()
+	#tokensGrales = tokenizaFrase(leeArchivo("SMS_Spam_Corpus.txt"), wordPunct=True)
+	[tokensGrales, rawText] = getTextTokens("SMS_Spam_Corpus.txt",backTextString=True)
+	tokensGrales= set(tokensGrales)
+
+	X = [] #Lista de mensajes lemmatizados
+	y = [] #Lista de verificación Si es spam->1 sino 0
+	while mensaje != '':
+		if mensaje:	
+			try:
+				if 'spam' in mensaje.split()[-1]:
+					mensaje = mensaje.strip()
+					mensaje=mensaje[:-6]	#Quitamos el ',spam' del final
+					if lemmatization == True:
+						fraseTokenizada = tokenizaFrase(mensaje, wordPunct=True)
+						mensajeLemmatizado = []
+						for token in fraseTokenizada:
+							tokenLemmatizado = wordnet_lemmatizer.lemmatize(token, pos='v')
+							mensajeLemmatizado.append(tokenLemmatizado)
+					y.append(1)
+					#print("SPAM "+str(mensajeLemmatizado)+"\n")
+				elif 'ham' in mensaje.split()[-1]:
+					mensaje = mensaje.strip()
+					mensaje=mensaje[:-5]
+					if lemmatization == True:
+						fraseTokenizada = tokenizaFrase(mensaje, wordPunct=True)
+						mensajeLemmatizado = []
+						for token in fraseTokenizada:
+							tokenLemmatizado = wordnet_lemmatizer.lemmatize(token, pos='v')
+							mensajeLemmatizado.append(tokenLemmatizado)
+					y.append(0)
+					#print("HAM"+str(mensajeLemmatizado)+"\n")
+				else:
+					print("Mensaje con contenido desconocido... ->"+str(mensaje.split()[-1])+ "<-")
+					uknownMessages.append(mensaje)
+
+				if lemmatization == True:
+					X.append(mensajeLemmatizado)
+				X.append(mensaje)
+			except Exception as ex:
+				print(ex)
+		mensaje = archivo.readline()
+
+	if keepUknownMessages == False:
+		return [X, y]
+	else:
+		return [X, y, uknownMessages]
+
+
+[X, y] = prepareTextSMS("SMS_Spam_Corpus.txt", lemmatization = False)
+
+
+
 #noticias = fetch_20newsgroups(subset='train')
 #print("Tipo de dato de noticias.data-> "+str(type(noticias.data)))
-input()
+#input("Longitud de lineas->"+str(len(X))+" len etiquetas-> "+str(len(y)))
 
-mensajesLemmatizadosStrings = []
 
-for lista in mensajesTotales:
+"""mensajesLemmatizadosStrings = []
+for lista in X:
 	cadena = " ".join(lista)
-	print(cadena)
+	#print(cadena)
 	mensajesLemmatizadosStrings.append(cadena)
+"""
+vector = CountVectorizer()
+X_counts = vector.fit_transform(X)
 
-vector.fit(mensajesLemmatizadosStrings)
+"""vector.fit(mensajesLemmatizadosStrings)
 
-#print(vector.vocabulary_)
+print(vector.vocabulary_)
 bolsa = vector.transform(mensajesLemmatizadosStrings)
 print("Tamaño Bag of Words -> "+str(bolsa.shape))
-ocurrenciasDict = nltk.FreqDist(tokensGrales)
-print(ocurrenciasDict)
-valoresOcurrencias=list(ocurrenciasDict.values())
-print("VALORES...")
-print(ocurrenciasDict.values())
-bolsaY = numpy.array(valoresOcurrencias)
-print(bolsaY)
-Xe, Xt, ye, yt = train_test_split(bolsa, bolsaY)"""
+print(bolsa.toarray())
+"""
 
+tfIdfTransformador = TfidfTransformer()
+X_tfidf = tfIdfTransformador.fit_transform(X_counts)
 
+X=X_tfidf
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state = 42)
 
-dictionary = Counter(tokensGrales)
-print("Diccionario->"+str(dictionary))
+#clf = MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)
+clf = MultinomialNB()
 
-
-clf = MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)
 #Si alpha = 1, es Laplace
 #Si fit_prior = True, se hace el conteo de palabras en la suma de todas
+clf.fit(X_train,y_train)
+pred = clf.predict(X_test)
 
-##clf.fit(Xe,ye)
+print("-------------")
+print("Y_test (verdadera): \n", y_test, '\n')
+print("prediction: \n", pred, '\n')
+print("Exactitud de predicción: \n", metrics.accuracy_score(y_test, pred), '\n')
+print("Matriz de confusión: \n", metrics.confusion_matrix(y_test, pred), '\n')
+print("Classification report: \n", metrics.classification_report(y_test, pred))
+
+#bolsa.toarray()
+#ocurrenciasDict = nltk.FreqDist(tokensGrales)
+#print(ocurrenciasDict)
+#valoresOcurrencias=list(ocurrenciasDict.values())
+#print("VALORES...")
+#print(ocurrenciasDict.values())
+#bolsaY = bolsa.toarray()
+#print(bolsaY)
+#Xe, Xt, ye, yt = train_test_split(bolsa, bolsaY)
+
+
+
+#dictionary = Counter(tokensGrales)
+#print("Diccionario->"+str(dictionary))
+
+
 
 ##print(clf.predict(X[2:3]))
 

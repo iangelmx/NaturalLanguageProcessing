@@ -1,0 +1,14 @@
+Se vectoriza por mensaje o por todo el archivo de sms's?
+
+X, y
+
+X lista de mensajes (String) Cada sms es una cadena
+	En cada cadena se elimina ",spam" o ",ham" del fin de cadena
+
+y lista de etiquetas en forma numérica. lista de (0's y 1's)
+	0-> Ham
+	1-> Spam
+
+X, y tienen los mismos índices. X[0] -> y[0]
+
+La función recibe rawText y regresa X e y
