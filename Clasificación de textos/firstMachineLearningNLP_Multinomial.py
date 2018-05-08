@@ -10,6 +10,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 from collections import Counter
 import numpy
@@ -117,11 +118,14 @@ print(bolsa.toarray())
 tfIdfTransformador = TfidfTransformer()
 X_tfidf = tfIdfTransformador.fit_transform(X_counts)
 
-X=X_tfidf
+#X=X_tfidf
+X=X_counts
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state = 42)
 
-#clf = MultinomialNB(alpha=1.0, class_prior=None, fit_prior=True)
-clf = MultinomialNB()
+
+#clf = MultinomialNB()
+clf = LogisticRegression()
+#clf = KNeighborsClassifier()
 
 #Si alpha = 1, es Laplace
 #Si fit_prior = True, se hace el conteo de palabras en la suma de todas
