@@ -1,0 +1,17 @@
+Preprocesamiento.
+	Qué hacemos con palabras, mientras siguen siendo palabras. (Antes de representación vectorial numérica)
+		* TOKENS 
+		* Tokens menos StopWords (Chapter 3 NLP with Python)
+		* Lematizar menos stopwords (Chapter 3 NLP with Python)
+		* Lemas
+
+Representación de elementos de vectores
+	Pueden ser:
+		* conteos naturales ó 
+		* Tf-Idf
+
+Clasificador
+	* MultinomialNB
+	* Logistic Regression
+	* kNN
+	* Maquina de vectores de soporte
