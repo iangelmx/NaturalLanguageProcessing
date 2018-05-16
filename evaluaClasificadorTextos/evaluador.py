@@ -140,9 +140,12 @@ def evaluaClasificador(X, y, classifier, count=True, tfIdf=False, svcKernel='lin
 # t, t-stop, lemmas, lemmaStopW, conteo, tfidf, precision, recall, fmeasure
 
 #[X, y] = prepareTextSMS("SMS_Spam_Corpus.txt", lemmatization = False)
-[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True, quitStopWords=True)
+######[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True, quitStopWords=True)
 
-#Sólo tokens
+svcKernelUser='linear'
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+### EVALUACIÓN Multinomial NB
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
 [precision, recall] = evaluaClasificador(X, y, "MultinomialNB")
 print("\nEvaluación a MultinomialNB\n")
@@ -178,6 +181,166 @@ print("|      \t     |                |       |      X      |        |   X    | 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
 [precision, recall] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
 print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+### EVALUACIÓN LogisticRegression
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
+print("\nEvaluación a Logistic-Regression\n")
+printTable()
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+#TFIDF LogisticRegression:
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+### EVALUACIÓN k-Nearest Neighbors
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "kNN")
+print("\nEvaluación a k-Nearest Neighbors\n")
+printTable()
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "kNN")
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "kNN")
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "kNN")
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+#TFIDF k-Nearest Neighbors:
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+### EVALUACIÓN LinearSVC
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "LinSVC")
+print("\nEvaluación a Linear SVC\n")
+printTable()
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LinSVC")
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LinSVC")
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "LinSVC")
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+#TFIDF LinearSVC:
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+### EVALUACIÓN SVC kernel
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+print("\nEvaluación a SVC con kernel="+svcKernelUser+"\n")
+printTable()
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+
+#TFIDF SVC kernel:
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+[X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
+[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+
+
+
+
+
+
 
 
 #tfIdfTransformador = TfidfTransformer()
