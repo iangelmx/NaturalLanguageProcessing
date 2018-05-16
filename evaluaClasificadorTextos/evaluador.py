@@ -10,7 +10,7 @@ from functionsNLP import *
 
 
 def printTable():
-	cadena = "| Raw Tokens | tokens - stopW | Lemas | Lemma-stopW | Conteo | tf_idf | precision | recall |"
+	cadena = "| Raw Tokens | tokens - stopW | Lemas | Lemma-stopW | Conteo | tf_idf | precision | recall | F-Measure |"
 	"""for a in items:
 					cadena +="| "+str(a)+"|\t" """
 	print(cadena)
@@ -126,16 +126,20 @@ def evaluaClasificador(X, y, classifier, count=True, tfIdf=False, svcKernel='lin
 	#print(classRep)
 	reporte = classRep.split()
 	#input(reporte)
-	precision = reporte[-4]
-	recall = reporte[-3]
+	#precision = reporte[-4]	#TOTAL
+	precision = reporte[-11] 	#Class de SPAM
+	#recall = reporte[-3]		#TOTAL
+	recall = reporte[-10] 		# Clase de SPAM
+	fmeasure = reporte[-9] 		#Clase de SPAM
+	#input("pres->"+str(precision)+"rec->"+str(recall))
 	if backAcuracyScore == False and backMatrixConf == False and backClasifRep == False:
-		return [precision, recall]
+		return [precision, recall, fmeasure]
 	elif backAcuracyScore == True and backMatrixConf == False and backClasifRep == False:
-		return [precision, recall, metrics.accuracy_score(y_test, pred)]
+		return [precision, recall, fmeasure, metrics.accuracy_score(y_test, pred)]
 	elif backAcuracyScore == True and backMatrixConf == True and backClasifRep == False:
-		return [precision, recall, metrics.accuracy_score(y_test, pred), metrics.confusion_matrix(y_test, pred)]
+		return [precision, recall, fmeasure, metrics.accuracy_score(y_test, pred), metrics.confusion_matrix(y_test, pred)]
 	elif backAcuracyScore == True and backMatrixConf == True and backClasifRep == True:
-		return [precision, recall, metrics.accuracy_score(y_test, pred), metrics.confusion_matrix(y_test, pred), classRep]
+		return [precision, recall, fmeasure, metrics.accuracy_score(y_test, pred), metrics.confusion_matrix(y_test, pred), classRep]
 
 # t, t-stop, lemmas, lemmaStopW, conteo, tfidf, precision, recall, fmeasure
 
@@ -147,194 +151,194 @@ svcKernelUser='linear'
 #--------------------------------------------------------------------------------------------------------------------------------------------
 ### EVALUACIÓN Multinomial NB
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB")
 print("\nEvaluación a MultinomialNB\n")
 printTable()
-print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB")
-print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB")
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB")
-print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB")
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB")
-print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB")
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 #TFIDF MultNB:
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
-print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
-print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
-print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
-print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "MultinomialNB", tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
 ### EVALUACIÓN LogisticRegression
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg")
 print("\nEvaluación a Logistic-Regression\n")
 printTable()
-print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
-print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg")
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
-print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg")
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg")
-print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg")
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 #TFIDF LogisticRegression:
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
-print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
-print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
-print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
-print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LogisticReg", tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
 ### EVALUACIÓN k-Nearest Neighbors
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "kNN")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN")
 print("\nEvaluación a k-Nearest Neighbors\n")
 printTable()
-print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "kNN")
-print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN")
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "kNN")
-print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN")
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "kNN")
-print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN")
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 #TFIDF k-Nearest Neighbors:
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
-print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
-print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
-print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "kNN", tfIdf=True)
-print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "kNN", tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
 ### EVALUACIÓN LinearSVC
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "LinSVC")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC")
 print("\nEvaluación a Linear SVC\n")
 printTable()
-print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LinSVC")
-print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC")
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LinSVC")
-print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC")
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "LinSVC")
-print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC")
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 #TFIDF LinearSVC:
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
-print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
-print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
-print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
-print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "LinSVC", tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------
 ### EVALUACIÓN SVC kernel
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
 print("\nEvaluación a SVC con kernel="+svcKernelUser+"\n")
 printTable()
-print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+print("|     X\t     |                |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
-print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+print("|      \t     |       X        |       |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
-print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+print("|      \t     |                |       |      X      |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
-print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser)
+print("|      \t     |                |   x   |             |   X    |        |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 #TFIDF SVC kernel:
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt")
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
-print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|     X\t     |                |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
-print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|      \t     |       X        |       |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True , quitStopWords=True)
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
-print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|      \t     |                |       |      X      |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 [X, y] = prepareRawText2Classify("SMS_Spam_Corpus.txt", lemmatization=True)
-[precision, recall] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
-print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  |")
+[precision, recall, fmeasure] = evaluaClasificador(X, y, "SVC", svcKernel=svcKernelUser, tfIdf=True)
+print("|      \t     |                |   x   |             |        |   X    |    "+precision+"   |  "+recall+"  | "+fmeasure+" |")
 
 
 
