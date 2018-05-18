@@ -15,6 +15,97 @@ import re
 from pickle import dump
 from pickle import load
 
+def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatization = False, tipoRawText = "SMS", quitStopWords = False, reviewCategory=None):
+	uknownMessages = []
+	try:
+		archivo = open(rutaArchivo, "r")
+		[tokensGrales, rawText] = getTextTokens(rutaArchivo,backTextString=True)
+		tokensGrales= set(tokensGrales)
+		mensaje = archivo.readline()
+	except Exception as ex:
+		print(ex)
+	#stop = set(stopwords.words('english'))
+	if quitStopWords == True:
+		from nltk.corpus import stopwords
+		stopWords = set(stopwords.words('english'))
+	if lemmatization == True:
+		wordnet_lemmatizer = WordNetLemmatizer()
+	
+	#tokensGrales = tokenizaFrase(leeArchivo("SMS_Spam_Corpus.txt"), wordPunct=True)
+	
+	X = [] #Lista de mensajes lemmatizados
+	y = [] #Lista de verificación Si es spam->1 sino 0
+	if tipoRawText == "SMS":
+		while mensaje != '':
+			if mensaje:
+				try:
+					if 'spam' in mensaje.split()[-1]:
+						mensaje = mensaje.strip()
+						mensaje=mensaje[:-6]	#Quitamos el ',spam' del final
+						fraseTokenizada = tokenizaFrase(mensaje, wordPunct=True)
+						if lemmatization == True:
+							mensajeLemmatizado = []
+							for token in fraseTokenizada:
+								tokenLemmatizado = wordnet_lemmatizer.lemmatize(token, pos='v')
+								mensajeLemmatizado.append(tokenLemmatizado)
+						if quitStopWords == True and lemmatization == True:
+							mensajeLemmatizado = [ lema for lema in mensajeLemmatizado if lema not in stopWords]
+						elif quitStopWords == True and lemmatization == False:
+							fraseTokenizada = [token for token in fraseTokenizada if token not in stopWords]
+						y.append(1)
+						#print("SPAM "+str(mensajeLemmatizado)+"\n")
+					elif 'ham' in mensaje.split()[-1]:
+						mensaje = mensaje.strip()
+						mensaje=mensaje[:-5]
+						fraseTokenizada = tokenizaFrase(mensaje, wordPunct=True)
+						if lemmatization == True:							
+							mensajeLemmatizado = []
+							for token in fraseTokenizada:
+								tokenLemmatizado = wordnet_lemmatizer.lemmatize(token, pos='v')
+								mensajeLemmatizado.append(tokenLemmatizado)
+						if quitStopWords == True and lemmatization == True:
+							mensajeLemmatizado = [ lema for lema in mensajeLemmatizado if lema not in stopWords]
+						elif quitStopWords == True and lemmatization == False:
+							fraseTokenizada = [token for token in fraseTokenizada if token not in stopWords]
+						y.append(0)
+						#print("HAM"+str(mensajeLemmatizado)+"\n")
+					else:
+						print("Mensaje con contenido desconocido... ->"+str(mensaje.split()[-1])+ "<-")
+						uknownMessages.append(mensaje)
+
+					if lemmatization == True and quitStopWords==False:
+						X.append(" ".join(mensajeLemmatizado))
+					elif lemmatization == True and quitStopWords==True:
+						X.append(" ".join(mensajeLemmatizado))
+					elif quitStopWords == True and lemmatization==False:
+						X.append(" ".join(fraseTokenizada))
+					else:
+						X.append(mensaje)
+				except Exception as ex:
+					#print(ex)
+					pass
+		mensaje = archivo.readline()
+	elif tipoRawText == 'review':
+		import numpy as np
+		import os
+		if reviewCategory:
+			if reviewCategory == 'coches':
+				path = rutaArchivo+'\\spanishReviewCorpus\\coches'
+				print(path)
+			
+			files = [f for f in os.listdir( path ) if os.path.isfile(f)]
+
+			for file in files:
+				print(file)
+			input("????")
+
+
+	if keepUknownMessages == False:
+		return [X, y]
+	else:
+		return [X, y, uknownMessages]
+
+
 def tokenizaFrase(rawText, wordPunct=False):
 	if wordPunct== False:
 		fraseTokenizada = nltk.Text(nltk.word_tokenize(rawText))
