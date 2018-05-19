@@ -12,12 +12,20 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.cross_validation import train_test_split
 
-print(""" Posibles clases: 
-	1) """)
-categoria = input("Teclee la categoría a evaluar (1-> Positive 0-> Negative)")
+print("""Posibles clases: 
+	* coches
+	* hoteles
+	* lavadoras
+	* libros
+	* moviles
+	* musica
+	* ordenadores
+	* peliculas""")
+
+categoria = input("Teclee la categoría a evaluar: ")
 
 [sampleTexts,y] = prepareRawText2Classify("C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos", tipoRawText = "review", reviewCategory=categoria)
-
+print("(1-> Positive 0-> Negative)")
 y=np.asarray(y)
 
 count_vect = CountVectorizer()
