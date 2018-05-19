@@ -86,19 +86,42 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 					pass
 		mensaje = archivo.readline()
 	elif tipoRawText == 'review':
-		import numpy as np
 		import os
+		import string
 		if reviewCategory:
 			if reviewCategory == 'coches':
 				path = rutaArchivo+'\\spanishReviewCorpus\\coches'
-				print(path)
-			
-			files = [f for f in os.listdir( path ) if os.path.isfile(f)]
-
-			for file in files:
-				print(file)
-			input("????")
-
+			elif reviewCategory == 'hoteles':
+				path = rutaArchivo+'\\spanishReviewCorpus\\hoteles'
+			elif reviewCategory == 'lavadoras':
+				path = rutaArchivo+'\\spanishReviewCorpus\\lavadoras'
+			elif reviewCategory == 'libros':
+				path = rutaArchivo+'\\spanishReviewCorpus\\libros'
+			elif reviewCategory == 'moviles':
+				path = rutaArchivo+'\\spanishReviewCorpus\\moviles'
+			elif reviewCategory == 'musica':
+				path = rutaArchivo+'\\spanishReviewCorpus\\musica'
+			elif reviewCategory == 'ordenadores':
+				path = rutaArchivo+'\\spanishReviewCorpus\\ordenadores'
+			elif reviewCategory == 'peliculas':
+				path = rutaArchivo+'\\spanishReviewCorpus\\peliculas'			
+				#print(path)
+			archivos = os.listdir(path)
+			try:
+				for archivo in archivos:
+					stringFile = leeArchivo(path+"\\"+archivo)
+					stringFile = stringFile.strip()
+					exclude = set(string.punctuation)
+					stringFile = ''.join(char for char in stringFile if char not in exclude)
+					if archivo[:2] == 'no':
+						#print("Negativo->"+archivo[:2]+"<-")
+						y.append(0)
+					elif archivo[:3] == 'yes':
+						#print("Positivo->"+archivo[:3]+"<-")
+						y.append(1)
+					X.append(stringFile)
+			except Exception as ex:
+				print(ex)
 
 	if keepUknownMessages == False:
 		return [X, y]
