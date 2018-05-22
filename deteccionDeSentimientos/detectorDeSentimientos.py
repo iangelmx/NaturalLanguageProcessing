@@ -7,6 +7,7 @@ import numpy
 sys.path.insert(0, '../Chapter5')
 from functionsNLP import *
 import numpy as np
+import os
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.cross_validation import train_test_split
@@ -23,7 +24,9 @@ print("""Posibles clases:
 
 categoria = input("Teclee la categoría a evaluar: ")
 
-[sampleTexts,y] = prepareRawText2Classify("C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos", tipoRawText = "review", reviewCategory=categoria)
+dirpath = os.getcwd()
+#"C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos"
+[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "review", reviewCategory=categoria)
 print("(1-> Positive 0-> Negative)")
 y=np.asarray(y)
 
