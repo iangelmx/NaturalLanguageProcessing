@@ -5,7 +5,6 @@ import sys
 from collections import Counter
 import numpy
 sys.path.insert(0, '../Chapter5')
-from mariamysqlib import *
 from functionsNLP import *
 import numpy as np
 
