@@ -5,7 +5,6 @@ import sys
 from collections import Counter
 import numpy
 sys.path.insert(0, '../Chapter5')
-from mariamysqlib import *
 from functionsNLP import *
 import numpy as np
 
@@ -28,11 +27,13 @@ categoria = input("Teclee la categoría a evaluar: ")
 print("(1-> Positive 0-> Negative)")
 y=np.asarray(y)
 
+#y<- etiquetas de los textos
+#X<- Lista de características
 count_vect = CountVectorizer()
 X_counts = count_vect.fit_transform(sampleTexts)
 X=X_counts
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state = 42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state = 42)
 
 import mord as m
 

@@ -111,6 +111,7 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 				for archivo in archivos:
 					stringFile = leeArchivo(path+"\\"+archivo)
 					stringFile = stringFile.strip()
+					stringFile = stringFile.lower()
 					exclude = set(string.punctuation)
 					stringFile = ''.join(char for char in stringFile if char not in exclude)
 					if archivo[:2] == 'no':

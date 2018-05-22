@@ -7,7 +7,7 @@ sys.path.insert(0, '../Chapter5')
 from mariamysqlib import *
 from functionsNLP import *
 
-print(doQuery("SELECT 'hola' FROM dual;"))
+#print(doQuery("SELECT 'hola' FROM dual;"))
 
 X = numpy.random.randint(5, size=(6, 100))
 y = numpy.array([1, 2, 3, 4, 5, 6])
