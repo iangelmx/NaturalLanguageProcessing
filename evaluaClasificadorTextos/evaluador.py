@@ -79,6 +79,7 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 						X.append(" ".join(fraseTokenizada))
 					else:
 						X.append(mensaje)
+					
 			except Exception as ex:
 				#print(ex)
 				pass
