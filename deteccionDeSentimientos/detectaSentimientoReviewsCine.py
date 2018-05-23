@@ -39,9 +39,9 @@ print("Classification report: \n", metrics.classification_report(y_test, y_pred)
 
 archivo.write("Precisión de prediccion: \n")
 archivo.write(str(clf.score(X_test, y_test)))
-archivo.write("\nMatriz de confusión: \n")
-archivo.write(metrics.confusion_matrix(y_test, y_pred).tostring())
-archivo.write("\nClassification report: \n")
-archivo.write(metrics.classification_report(y_test, y_pred).tostring())
+archivo.write("\n\nMatriz de confusión: \n")
+archivo.write( np.array2string(metrics.confusion_matrix(y_test, y_pred), separator=', ') )
+archivo.write("\n\nClassification report: \n")
+archivo.write(metrics.classification_report(y_test, y_pred))
 
 archivo.close()

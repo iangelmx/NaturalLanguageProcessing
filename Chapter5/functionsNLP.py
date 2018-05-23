@@ -161,8 +161,12 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 
 def getListFiles(path):
 	import os
-	archivos = os.listdir(path)
-	return archivos
+	try:
+		archivos = os.listdir(path)
+		return archivos
+	except Exception as ex:
+		print(ex)
+		print("Parece que no existen los archivos que se desean obtener")
 
 def selectFilesOfSpecificExtension(archivos,extension):
 	selectedFiles = []
