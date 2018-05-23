@@ -106,7 +106,7 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 			elif reviewCategory == 'peliculas':
 				path = rutaArchivo+'\\spanishReviewCorpus\\peliculas'			
 				#print(path)
-			archivos = os.listdir(path)
+			archivos = getListFiles(path)
 			try:
 				for archivo in archivos:
 					stringFile = leeArchivo(path+"\\"+archivo)
@@ -123,12 +123,51 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 					X.append(stringFile)
 			except Exception as ex:
 				print(ex)
+	elif tipoRawText == 'reviewCine':
+		import os
+		import string
+		from bs4 import BeautifulSoup
+		path = rutaArchivo + "\\corpusCriticasCine"
+		print("Ruta->"+path)
+		archivos = getListFiles(path)
+		archivosXML = selectFilesOfSpecificExtension(archivos,'xml')
+		print(archivosXML)
+		input("Tamaño de lista de archivos->"+str(len(archivosXML)))
+		try:
+			for archivo in archivosXML:
+				xml = leeArchivo(path+"\\"+archivo)
+				soup = BeautifulSoup(xml, 'lxml')
+				
+				body = soup.find('body')
+				review = body.get_text().strip().lower().replace('\n', ' ')
+				
+				metaData = soup.find('review')
+				rank = metaData.attrs['rank']
+				
+				exclude = set(string.punctuation)
+				exclude.update(['¿', '¡', '"'])
+				review = ''.join(char for char in review if char not in exclude)
+				y.append(rank)
+				X.append(review)
+		except Exception as ex:
+			print(ex)
 
 	if keepUknownMessages == False:
 		return [X, y]
 	else:
 		return [X, y, uknownMessages]
 
+def getListFiles(path):
+	import os
+	archivos = os.listdir(path)
+	return archivos
+
+def selectFilesOfSpecificExtension(archivos,extension):
+	selectedFiles = []
+	for archivo in archivos:
+		if archivo.endswith(extension):
+			selectedFiles.append(archivo)
+	return selectedFiles
 
 def tokenizaFrase(rawText, wordPunct=False):
 	if wordPunct== False:
