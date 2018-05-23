@@ -7,10 +7,14 @@ from pickle import dump
 from pickle import load
 import sys
 sys.path.insert(0, '../Chapter03/mariamysqlib.py')
-sys.path.insert(0, '../Chapter03/functionsNLP.py')
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 
 
-"""from functionsNLP import *
+"""#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 from mariamysqlib import *"""
 
 brown_tagged_sents = brown.tagged_sents(categories='news')

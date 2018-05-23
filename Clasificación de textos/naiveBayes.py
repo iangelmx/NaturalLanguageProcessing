@@ -1,11 +1,12 @@
-import nltk
-import sys
 import numpy
 from sklearn.naive_bayes import MultinomialNB
 sys.path.insert(0, '../Chapter5')
 #sys.path.insert(0, '../Chapter5')
 from mariamysqlib import *
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 
 #print(doQuery("SELECT 'hola' FROM dual;"))
 

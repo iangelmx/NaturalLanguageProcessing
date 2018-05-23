@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 from mariamysqlib import *
 from nltk.corpus import stopwords
 import nltk

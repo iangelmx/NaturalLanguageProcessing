@@ -5,7 +5,10 @@ from collections import defaultdict
 from nltk.corpus import brown
 from pickle import dump
 from pickle import load
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 from mariamysqlib import *
 
 def lemmatizerBD2(rutaArchivoLemmas, tabla):

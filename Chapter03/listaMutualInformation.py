@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 import operator
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 from mariamysqlib import *
 import math
 from decimal import *

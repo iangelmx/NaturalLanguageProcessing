@@ -2,7 +2,6 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import WordPunctTokenizer
 from nltk.corpus import stopwords 
-import sys
 from sklearn.datasets import fetch_20newsgroups
 #from sklearn.model_selection import train_test_split
 from sklearn.cross_validation import train_test_split
@@ -19,7 +18,10 @@ import numpy
 sys.path.insert(0, '../Chapter5')
 #sys.path.insert(0, '../Chapter5')
 from mariamysqlib import *
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 
 def prepareTextSMS(rutaArchivo, keepUknownMessages = False, lemmatization = False):
 	uknownMessages = []

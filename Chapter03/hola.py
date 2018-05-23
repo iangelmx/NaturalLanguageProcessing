@@ -1,6 +1,9 @@
 import nltk
 import re
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 from mariamysqlib import *
 
 [tokens, texto]=getTextTokens("e960401_txt.txt",backTextString=True)	#Una manera que se me ocurrió de tokenizar. Es precisa en un 96.35%

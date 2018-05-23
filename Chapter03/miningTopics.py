@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 import nltk
 import re
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 from mariamysqlib import *
 import math
 

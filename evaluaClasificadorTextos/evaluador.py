@@ -6,7 +6,9 @@ from collections import Counter
 import numpy
 sys.path.insert(0, '../Chapter5')
 from mariamysqlib import *
-from functionsNLP import *
+#from functionsNLP import *
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 
 
 def printTable():

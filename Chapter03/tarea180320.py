@@ -7,7 +7,10 @@ import nltk, re, pprint
 from urllib.request import *
 from bs4 import BeautifulSoup
 import feedparser
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 url="http://www.gutenberg.org/files/2554/2554-0.txt"
 #url="http://www.gutenberg.org/files/2554/2554.txt"
 

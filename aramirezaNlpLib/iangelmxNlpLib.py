@@ -188,17 +188,6 @@ def tokenizaFrase(rawText, wordPunct=False):
 	else:
 		return "Tokenización fuera de catálogo"
 
-def getNoticeTitle(renglones):
-	a=0
-	try:
-		while "<h3>" not in renglones[a]:
-			a+=1
-		encabezado =renglones[a]+" "+renglones[a+2]
-		encabezadoBeauti = BSHTML(encabezado, 'lxml')
-		return encabezadoBeauti.text
-	except Exception as ex:
-		print(ex)
-	return "Error"
 
 def tagRawText2POS(listaOraciones):
 	existe=False

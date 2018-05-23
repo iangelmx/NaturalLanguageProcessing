@@ -1,11 +1,13 @@
 import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import WordPunctTokenizer
-import sys
 from collections import Counter
 import numpy
 sys.path.insert(0, '../Chapter5')
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 import numpy as np
 import os
 from sklearn.feature_extraction.text import CountVectorizer
@@ -20,9 +22,10 @@ y=np.asarray(y)
 #X<- Lista de características
 count_vect = CountVectorizer()
 X_counts = count_vect.fit_transform(sampleTexts)
+#input(type(X_counts))
 X=X_counts
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state = 42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state = 42)
 
 import mord as m
 

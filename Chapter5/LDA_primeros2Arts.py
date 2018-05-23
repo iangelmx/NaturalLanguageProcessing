@@ -4,7 +4,10 @@ import string
 import gensim
 from gensim import corpora
 from mariamysqlib import *
-from functionsNLP import *
+#from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 
 #example documents
 '''doc1 = "Sugar is bad to consume. My sister likes to have sugar, but not my father."

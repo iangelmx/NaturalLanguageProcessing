@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
-from functionsNLP import *
+##from functionsNLP import *
+import sys
+sys.path.insert(0, '../aramirezaNlpLib')
+from iangelmxNlpLib import *
 from mariamysqlib import *
 from bs4 import BeautifulSoup as BSHTML
+
 
 
 def getNoticeTitle(renglones):
