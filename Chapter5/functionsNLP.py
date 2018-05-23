@@ -128,11 +128,11 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 		import string
 		from bs4 import BeautifulSoup
 		path = rutaArchivo + "\\corpusCriticasCine"
-		print("Ruta->"+path)
+		#print("Ruta->"+path)
 		archivos = getListFiles(path)
 		archivosXML = selectFilesOfSpecificExtension(archivos,'xml')
-		print(archivosXML)
-		input("Tamaño de lista de archivos->"+str(len(archivosXML)))
+		#print(archivosXML)
+		print("Tamaño de lista de archivos->"+str(len(archivosXML)))
 		try:
 			for archivo in archivosXML:
 				xml = leeArchivo(path+"\\"+archivo)
@@ -147,7 +147,9 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 				exclude = set(string.punctuation)
 				exclude.update(['¿', '¡', '"'])
 				review = ''.join(char for char in review if char not in exclude)
-				y.append(rank)
+				
+				rankNumber = int(rank)
+				y.append(rankNumber)
 				X.append(review)
 		except Exception as ex:
 			print(ex)
