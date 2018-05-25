@@ -1,0 +1,16 @@
+Lemmatizar palabras
+
+De las reviews, tomar los lemmas de X.review.pos
+PARA CADA LEMMA:
+	Buscar lemma en el diccionario y extraer su polaridad (pol="X.XX") <- Se puede hacer un diccionario -> {lemma : polaridad, ... , lemmaN : "X.XX"}
+
+
+
+Para cada archivo, se suman sus polaridades.
+
+Si el lemma no existe, sumar 0
+
+
+En una tabla:
+| polaridad | rank | nombre_archivo |
+| ......... |  4   |        2       |

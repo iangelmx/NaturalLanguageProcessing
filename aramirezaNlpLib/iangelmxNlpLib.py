@@ -15,7 +15,7 @@ import re
 from pickle import dump
 from pickle import load
 
-def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatization = False, tipoRawText = "SMS", quitStopWords = False, reviewCategory=None, maxReviews=None):
+def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatization = False, tipoRawText = "SMS", quitStopWords = False, reviewCategory=None, maxReviews=None, polaridad=False):
 	uknownMessages = []
 	try:
 		archivo = open(rutaArchivo, "r")
@@ -132,15 +132,22 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 		archivos = getListFiles(path)
 		if maxReviews:
 			archivosXML = selectFilesOfSpecificExtension(archivos,'xml')[:maxReviews]
+			if polaridad == True:
+				archivosReviewPos = selectFilesOfSpecificExtension(archivos, 'review.pos')[:maxReviews]
+			#input(archivosXML)
+			#input(archivosReviewPos)
+
 		else:
 			archivosXML = selectFilesOfSpecificExtension(archivos,'xml')
+			if polaridad == True:
+				archivosReviewPos = selectFilesOfSpecificExtension(archivos, 'review.pos')
 		#print(archivosXML)
 		print("Tamaño de lista de archivos->"+str(len(archivosXML)))
 		try:
 			for archivo in archivosXML:
 				xml = leeArchivo(path+"\\"+archivo)
 				soup = BeautifulSoup(xml, 'lxml')
-				
+		
 				body = soup.find('body')
 				review = body.get_text().strip().lower().replace('\n', ' ')
 				
@@ -154,6 +161,10 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 				rankNumber = int(rank)
 				y.append(rankNumber)
 				X.append(review)
+			if polaridad == True:
+				for archivoPos in archivosReviewPos:
+					xml = leeArchivo(path+"\\"+archivoPos)
+					soup = BeautifulSoup
 		except Exception as ex:
 			print(ex)
 

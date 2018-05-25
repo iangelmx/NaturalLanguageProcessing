@@ -3,7 +3,6 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import WordPunctTokenizer
 from collections import Counter
 import numpy
-sys.path.insert(0, '../Chapter5')
 #from functionsNLP import *
 import sys
 sys.path.insert(0, '../aramirezaNlpLib')
@@ -15,7 +14,7 @@ from sklearn.cross_validation import train_test_split
 
 dirpath = os.getcwd()
 #"C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos"
-[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine")
+[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100)
 y=np.asarray(y)
 
 #y<- etiquetas de los textos
