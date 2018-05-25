@@ -11,20 +11,27 @@ def gender_features(word):
 print(gender_features('Shrek'))
 
 
+
 labeled_names = ([(name, 'male') for name in names.words('male.txt')] + [(name, 'female') for name in names.words('female.txt')])
 print(random.shuffle(labeled_names))
 
 featuresets = [(gender_features(n), gender) for (n, gender) in labeled_names]
 train_set, test_set = featuresets[500:], featuresets[:500]
 classifier = nltk.NaiveBayesClassifier.train(train_set)
-
+print("Nombres extraños: ")
 print( classifier.classify(gender_features('Neo')) )
 
 print( classifier.classify(gender_features('Trinity')) )
+print("-------------")
 
+
+print("Acuracy: ")
 print(nltk.classify.accuracy(classifier, test_set))
-
+print("------------------")
+print("")
 print( classifier.show_most_informative_features(5) )
+
+print(".-.-.-.-.-.-")
 
 from nltk.classify import apply_features
 train_set = apply_features(gender_features, labeled_names[500:])
@@ -39,7 +46,11 @@ def gender_features2(name):
         features["has({})".format(letter)] = (letter in name.lower())
     return features
  	
+print("Aplicando gender_features2 con Jhon:")
 print( gender_features2('John') )
+
+print("..........................")
+
 
 featuresets = [(gender_features2(n), gender) for (n, gender) in labeled_names]
 train_set, test_set = featuresets[500:], featuresets[:500]
@@ -55,6 +66,8 @@ devtest_set = [(gender_features(n), gender) for (n, gender) in devtest_names]
 test_set = [(gender_features(n), gender) for (n, gender) in test_names]
 classifier = nltk.NaiveBayesClassifier.train(train_set)
 print(nltk.classify.accuracy(classifier, devtest_set))
+
+print("Seccion tag, guess, name:")
 
 errors = []
 for (name, tag) in devtest_names:
