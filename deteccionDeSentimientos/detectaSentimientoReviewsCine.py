@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import WordPunctTokenizer
@@ -14,7 +17,8 @@ from sklearn.cross_validation import train_test_split
 
 dirpath = os.getcwd()
 #"C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos"
-[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100)
+rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
+[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100, rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
 y=np.asarray(y)
 
 #y<- etiquetas de los textos

@@ -15,7 +15,7 @@ import re
 from pickle import dump
 from pickle import load
 
-def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatization = False, tipoRawText = "SMS", quitStopWords = False, reviewCategory=None, maxReviews=None, polaridad=False):
+def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatization = False, tipoRawText = "SMS", quitStopWords = False, reviewCategory=None, maxReviews=None, polaridad=False, rutaDiccionarioPolaridad=None):
 	uknownMessages = []
 	try:
 		archivo = open(rutaArchivo, "r")
@@ -134,6 +134,19 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 			archivosXML = selectFilesOfSpecificExtension(archivos,'xml')[:maxReviews]
 			if polaridad == True:
 				archivosReviewPos = selectFilesOfSpecificExtension(archivos, 'review.pos')[:maxReviews]
+				diccionarioSentimPolaridadXML = leeArchivo(rutaDiccionarioPolaridad+"\\senticon.es.xml", modeReader="utf-8")
+
+				soup = BeautifulSoup(diccionarioSentimPolaridadXML, 'lxml')
+
+				lemmasDiccionario = soup.findAll('lemma')
+				diccionarioSentimPolaridadPy = {}
+				for lemmaTag in lemmasDiccionario:
+					lemma=str(lemmaTag.get_text().strip())
+					polaridad = float(lemmaTag.attrs['pol'])
+					diccionarioSentimPolaridadPy[lemma] = polaridad
+					#input("Polaridad->"+str(polaridad)+"<-")
+					#input("diccionarioSentimPolaridadPy["+lemma+"] : "+str(polaridad))
+				#polaridadesDicc = lemmasDiccionario.attrs['rank']
 			#input(archivosXML)
 			#input(archivosReviewPos)
 
@@ -144,6 +157,14 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 		#print(archivosXML)
 		print("Tamaño de lista de archivos->"+str(len(archivosXML)))
 		try:
+			if polaridad == True:
+				for archivoPos in archivosReviewPos:
+					#xmlPos = leeArchivo(path+"\\"+archivoPos)
+					xmlReviewPos = open(path+"\\"+archivoPos, mode="r", encoding="utf-8")
+					linea = xmlReviewPos.readline()
+					lemma = linea[1]
+					input("Forma->"+linea[0]+" | lemma->"+lemma)
+					#soup = BeautifulSoup(xmlPos, 'lxml')
 			for archivo in archivosXML:
 				xml = leeArchivo(path+"\\"+archivo)
 				soup = BeautifulSoup(xml, 'lxml')
@@ -161,10 +182,7 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 				rankNumber = int(rank)
 				y.append(rankNumber)
 				X.append(review)
-			if polaridad == True:
-				for archivoPos in archivosReviewPos:
-					xml = leeArchivo(path+"\\"+archivoPos)
-					soup = BeautifulSoup
+
 		except Exception as ex:
 			print(ex)
 
@@ -244,8 +262,11 @@ def tagRawText2POS(listaOraciones):
 			listaToken_TAG.append(listaItem)
 	return listaToken_TAG
 
-def leeArchivo(rutaArchivo):
-	file = open(rutaArchivo, "r")
+def leeArchivo(rutaArchivo, modeReader=None):
+	if modeReader:
+		file = open(rutaArchivo, mode="r",encoding=modeReader ) # encoding="utf-8")
+	else:
+		file = open(rutaArchivo, "r")
 	archivo=file.read()
 	file.close()
 	return archivo
