@@ -127,6 +127,7 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 		import os
 		import string
 		from bs4 import BeautifulSoup
+		
 		path = rutaArchivo + "\\corpusCriticasCine"
 		#print("Ruta->"+path)
 		if polaridad == True:
@@ -146,8 +147,8 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 				diccionarioSentimPolaridadPy = {}
 				for lemmaTag in lemmasDiccionario:
 					lemma=str(lemmaTag.get_text().strip())
-					polaridad = float(lemmaTag.attrs['pol'])
-					diccionarioSentimPolaridadPy[lemma] = polaridad
+					polaridadNum = float(lemmaTag.attrs['pol'])
+					diccionarioSentimPolaridadPy[lemma] = polaridadNum
 					#input("Polaridad->"+str(polaridad)+"<-")
 					#input("diccionarioSentimPolaridadPy["+lemma+"] : "+str(polaridad))
 				#polaridadesDicc = lemmasDiccionario.attrs['rank']
@@ -167,29 +168,39 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 				transaccion.append("TRUNCATE polaridadReviews;")
 				for archivoPos in archivosReviewPos:
 					#xmlPos = leeArchivo(path+"\\"+archivoPos)
-					xmlReviewPos = open(path+"\\"+archivoPos, mode="r", encoding="utf-8")
+					#print("Ruta->"+path+"\\"+archivoPos)
+					xmlReviewPos = open(path+"\\"+archivoPos, mode="r") #, encoding="utf-8")
 					linea = xmlReviewPos.readline()
 					polaridadReview = 0.0
 					while( linea != ''):
-						lemma = linea[1]
-						lemma = ''.join(char for char in lemma if char not in exclude)
-						if lemma in diccionarioSentimPolaridadPy:
-							polaridadReview+=diccionarioSentimPolaridadPy[lemma]
+						linea = ''.join(char for char in linea if char not in exclude)
+						linea = linea.strip()
+						try:
+							lemma = linea.split()[1]
+							#print( linea )
+							puntuacion = "Fe Fc Fia Fit Fp"
+							if linea.split()[0] not in puntuacion:
+								#input("Forma->"+linea.split()[0]+" | lemma->"+lemma)
+								if lemma in diccionarioSentimPolaridadPy:
+									polaridadReview+=diccionarioSentimPolaridadPy[lemma]
+						except Exception as ex:
+							pass
+						linea = xmlReviewPos.readline()
 
 					rutaXmlFromPOS = path+"\\"+archivoPos.split('.review.pos')[0]+".xml"
-					input(rutaXmlFromPOS)
+					#input(rutaXmlFromPOS)
 					xml = leeArchivo(rutaXmlFromPOS)
 					soup = BeautifulSoup(xml, 'lxml')
+
 					metaData = soup.find('review')
 					rank = metaData.attrs['rank']
 
-					transaccion.append("INSERT into polaridadReviews(polaridad, rank, archivo) VALUES('"+polaridad+"', '"+rank+"', '"+archivoPos+"')")					
+					transaccion.append("INSERT into polaridadReviews(polaridad, rank, archivoPos) VALUES('"+str(polaridadReview)+"', '"+str(rank)+"', '"+str(archivoPos)+"')")
 
-					#input("Forma->"+linea[0]+" | lemma->"+lemma)
+					
 				transaccion.append("COMMIT;")
-				resultado = doTransaction(transaccion)
-
-				return resultado
+				
+				return transaccion
 					#soup = BeautifulSoup(xmlPos, 'lxml')
 			for archivo in archivosXML:
 				xml = leeArchivo(path+"\\"+archivo)
