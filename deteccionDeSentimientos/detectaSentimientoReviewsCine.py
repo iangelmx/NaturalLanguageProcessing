@@ -21,15 +21,12 @@ dirpath = os.getcwd()
 rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
 rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
 
-#[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100, rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
-transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100, rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
+#transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100, rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
+#resultado = doTransaction(transaccion) #, traceback=True)
 
-resultado = doTransaction(transaccion) #, traceback=True)
+#print(resultado)
 
-print(resultado)
-
-
-input("Qué pasó? .-.-.-.-.-.")
+[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100)
 
 y=np.asarray(y)
 
