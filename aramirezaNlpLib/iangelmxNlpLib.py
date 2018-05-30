@@ -46,13 +46,13 @@ def getPosNegPolarity(rutaCorpusReviews, rutaDiccionario, maxReviews=None):
 	for linea in diccionarioPosNegFull:
 		lemma = linea.split()[0]
 		polaridad = linea.split()[-1]
-		diccionarioPosNegPolaridadPy[lemma] = polaridad
+		diccionarioPosNegFullPy[lemma] = polaridad
 	
 	diccionarioPosNegMediumPy = {}
 	for linea in diccionarioPosNegMedium:
 		lemma = linea.split()[0]
 		polaridad = linea.split()[-1]
-		diccionarioPosNegPolaridadPy[lemma] = polaridad
+		diccionarioPosNegMediumPy[lemma] = polaridad
 
 	print("Tamaño de lista de archivos->"+str(len(archivosXML)))
 
