@@ -18,10 +18,11 @@ from sklearn.cross_validation import train_test_split
 
 dirpath = os.getcwd()
 #"C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos"
-rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
-rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
+#rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
+rutaDiccionario = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\SpanishSentimentLexicons"
+rutaReviewsCine = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos\\corpusCriticasCine"
 
-transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
+transaccion = getPosNegPolarity(rutaReviewsCine, rutaDiccionario) #, maxReviews=100)
 #transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
 resultado = doTransaction(transaccion) #, traceback=True)
 
