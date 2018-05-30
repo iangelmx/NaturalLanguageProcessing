@@ -1,0 +1,7 @@
+Notas para tarea de polaridad Rank Fname
+Con polarity pos neg
+
+La misma dinámica de con polaridadReviewsCine
+Lemmas, buscar en los diccionarios de full y medium Stregth lexicon
+
+Sumar neg and pos y decidir.

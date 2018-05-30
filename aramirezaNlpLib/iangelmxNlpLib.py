@@ -159,6 +159,16 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 			archivosXML = selectFilesOfSpecificExtension(archivos,'xml')
 			if polaridad == True:
 				archivosReviewPos = selectFilesOfSpecificExtension(archivos, 'review.pos')
+				diccionarioSentimPolaridadXML = leeArchivo(rutaDiccionarioPolaridad+"\\senticon.es.xml", modeReader="utf-8")
+
+				soup = BeautifulSoup(diccionarioSentimPolaridadXML, 'lxml')
+
+				lemmasDiccionario = soup.findAll('lemma')
+				diccionarioSentimPolaridadPy = {}
+				for lemmaTag in lemmasDiccionario:
+					lemma=str(lemmaTag.get_text().strip())
+					polaridadNum = float(lemmaTag.attrs['pol'])
+					diccionarioSentimPolaridadPy[lemma] = polaridadNum
 		#print(archivosXML)
 		print("Tamaño de lista de archivos->"+str(len(archivosXML)))
 		try:
@@ -167,23 +177,19 @@ def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatizati
 				transaccion.append("START TRANSACTION;")
 				transaccion.append("TRUNCATE polaridadReviews;")
 				for archivoPos in archivosReviewPos:
-					#xmlPos = leeArchivo(path+"\\"+archivoPos)
-					#print("Ruta->"+path+"\\"+archivoPos)
 					xmlReviewPos = open(path+"\\"+archivoPos, mode="r") #, encoding="utf-8")
 					linea = xmlReviewPos.readline()
 					polaridadReview = 0.0
 					while( linea != ''):
-						linea = ''.join(char for char in linea if char not in exclude)
 						linea = linea.strip()
 						try:
 							lemma = linea.split()[1]
-							#print( linea )
-							puntuacion = "Fe Fc Fia Fit Fp"
-							if linea.split()[0] not in puntuacion:
-								#input("Forma->"+linea.split()[0]+" | lemma->"+lemma)
+							if linea.split()[0] not in exclude:
 								if lemma in diccionarioSentimPolaridadPy:
 									polaridadReview+=diccionarioSentimPolaridadPy[lemma]
 						except Exception as ex:
+							#print(ex)
+							#print(linea + archivoPos)
 							pass
 						linea = xmlReviewPos.readline()
 

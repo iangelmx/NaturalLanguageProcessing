@@ -21,7 +21,7 @@ dirpath = os.getcwd()
 rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
 rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
 
-transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=500, rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
+transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
 #transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
 resultado = doTransaction(transaccion) #, traceback=True)
 
