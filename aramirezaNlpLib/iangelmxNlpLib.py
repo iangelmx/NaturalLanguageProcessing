@@ -15,6 +15,113 @@ import re
 from pickle import dump
 from pickle import load
 
+def getPosNegPolarity(rutaCorpusReviews, rutaDiccionario, maxReviews=None):
+	import os
+	import string
+	from bs4 import BeautifulSoup
+	
+	#path = rutaCorpusReviews + "\\corpusCriticasCine"
+	path = rutaCorpusReviews
+	#print("Ruta->"+path)
+	polaridadReview = 0.0
+	exclude = set(string.punctuation)
+	exclude.update(['¿', '¡', '"'])
+	archivos = getListFiles(path)
+	if maxReviews:
+		archivosXML = selectFilesOfSpecificExtension(archivos,'xml')[:maxReviews]
+		archivosReviewPos = selectFilesOfSpecificExtension(archivos, 'review.pos')[:maxReviews]
+	else:
+		archivosXML = selectFilesOfSpecificExtension(archivos,'xml')
+		archivosReviewPos = selectFilesOfSpecificExtension(archivos, 'review.pos')
+	
+	#diccionarioPosNegFull = leeArchivo(rutaDiccionario+"\\fullStrengthLexicon.txt", modeReader="utf-8")
+	archivoPosNegFull = open(rutaDiccionario+"\\fullStrengthLexicon.txt", mode="r", encoding="utf-8")
+	#diccionarioPosNegMedium = leeArchivo(rutaDiccionario+"\\mediumStrengthLexicon.txt", modeReader="utf-8")
+	archivoPosNegMedium = open(rutaDiccionario+"\\mediumStrengthLexicon.txt", mode="r", encoding="utf-8")
+
+	diccionarioPosNegFull = archivoPosNegFull.readlines()
+	diccionarioPosNegMedium = archivoPosNegMedium.readlines()
+
+	diccionarioPosNegFullPy = {}
+	for linea in diccionarioPosNegFull:
+		lemma = linea.split()[0]
+		polaridad = linea.split()[-1]
+		diccionarioPosNegPolaridadPy[lemma] = polaridad
+	
+	diccionarioPosNegMediumPy = {}
+	for linea in diccionarioPosNegMedium:
+		lemma = linea.split()[0]
+		polaridad = linea.split()[-1]
+		diccionarioPosNegPolaridadPy[lemma] = polaridad
+
+	print("Tamaño de lista de archivos->"+str(len(archivosXML)))
+
+	transaccion = []
+	transaccion.append("START TRANSACTION;")
+	transaccion.append("TRUNCATE polaridadPosNegReviews;")
+	for archivoPos in archivosReviewPos:
+		xmlReviewPos = open(path+"\\"+archivoPos, mode="r") #, encoding="utf-8")
+		linea = xmlReviewPos.readline()
+		polPositive = 0
+		polNegative = 0
+		while( linea != ''):
+			linea = linea.strip()
+			try:
+				lemma = linea.split()[1]
+				if linea.split()[0] not in exclude:
+					if lemma in diccionarioPosNegFullPy:
+						polaridad = diccionarioPosNegFullPy[lemma]
+						if polaridad == "pos":
+							polPositive += 1
+						elif polaridad == "neg":
+							polNegative += 1
+					elif lemma in diccionarioPosNegMediumPy:
+						polaridad = diccionarioPosNegMediumPy[lemma]
+						if polaridad == "pos":
+							polPositive += 1
+						elif polaridad == "neg":
+							polNegative += 1
+					elif lemma in diccionarioSentimPolaridadPy and lemma in diccionarioPosNegMediumPy:
+						polaridadMedi = diccionarioPosNegMediumPy[lemma]
+						polaridadFull = diccionarioPosNegFullPy[lemma]
+						if polaridadMedi == polaridadFull and polaridadMedi == "pos":
+							polPositive += 1
+						elif polaridadMedi == polaridadFull and polaridadMedi == "neg":
+							polNegative += 1
+						else:
+							pass
+			except Exception as ex:
+				#print(ex)
+				#print(linea + archivoPos)
+				pass
+			linea = xmlReviewPos.readline()
+
+		if polPositive > polNegative:
+			polaridadReview="POSITIVE"
+			#print("POS")
+		elif polPositive < polNegative:
+			polaridadReview="NEGATIVE"
+			#print("NEG")
+		else:
+			polaridadReview = "NEUTRAL"
+			#print("NEUTRAL")
+
+		rutaXmlFromPOS = path+"\\"+archivoPos.split('.review.pos')[0]+".xml"
+		#input(rutaXmlFromPOS)
+		xml = leeArchivo(rutaXmlFromPOS)
+		soup = BeautifulSoup(xml, 'lxml')
+
+		metaData = soup.find('review')
+		rank = metaData.attrs['rank']
+
+		transaccion.append("INSERT into polaridadReviews(polaridad, rank, archivoPos) VALUES('"+str(polaridadReview)+"', '"+str(rank)+"', '"+str(archivoPos)+"')")
+
+		
+	transaccion.append("COMMIT;")
+	
+	return transaccion
+
+
 def prepareRawText2Classify(rutaArchivo, keepUknownMessages = False, lemmatization = False, tipoRawText = "SMS", quitStopWords = False, reviewCategory=None, maxReviews=None, polaridad=False, rutaDiccionarioPolaridad=None):
 	uknownMessages = []
 	try:
