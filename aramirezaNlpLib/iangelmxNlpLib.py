@@ -114,7 +114,7 @@ def getPosNegPolarity(rutaCorpusReviews, rutaDiccionario, maxReviews=None):
 		metaData = soup.find('review')
 		rank = metaData.attrs['rank']
 
-		transaccion.append("INSERT into polaridadReviews(polaridad, rank, archivoPos) VALUES('"+str(polaridadReview)+"', '"+str(rank)+"', '"+str(archivoPos)+"')")
+		transaccion.append("INSERT into polaridadPosNegReviews(polaridad, rank, archivoPos) VALUES('"+str(polaridadReview)+"', '"+str(rank)+"', '"+str(archivoPos)+"')")
 
 		
 	transaccion.append("COMMIT;")

@@ -22,7 +22,7 @@ dirpath = os.getcwd()
 rutaDiccionario = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\SpanishSentimentLexicons"
 rutaReviewsCine = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos\\corpusCriticasCine"
 
-transaccion = getPosNegPolarity(rutaReviewsCine, rutaDiccionario, maxReviews=100)
+transaccion = getPosNegPolarity(rutaReviewsCine, rutaDiccionario) #, maxReviews=100)
 #transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
 resultado = doTransaction(transaccion) #, traceback=True)
 
