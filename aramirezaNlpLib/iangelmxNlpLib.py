@@ -89,6 +89,7 @@ def getPosNegPolarity(rutaCorpusReviews, rutaDiccionario, maxReviews=None):
 						elif polaridadMedi == polaridadFull and polaridadMedi == "neg":
 							polNegative += 1
 						else:
+							print("polarMedi->"+polaridadMedi+" polarFull->"+polaridadFull+" lemma->"+lemma)
 							pass
 			except Exception as ex:
 				#print(ex)
@@ -114,7 +115,7 @@ def getPosNegPolarity(rutaCorpusReviews, rutaDiccionario, maxReviews=None):
 		metaData = soup.find('review')
 		rank = metaData.attrs['rank']
 
-		transaccion.append("INSERT into polaridadPosNegReviews(polaridad, rank, archivoPos) VALUES('"+str(polaridadReview)+"', '"+str(rank)+"', '"+str(archivoPos)+"')")
+		transaccion.append("INSERT into polaridadPosNegReviews(polaridad, rank, archivoPos, countPositive, countNegative) VALUES('"+str(polaridadReview)+"', '"+str(rank)+"', '"+str(archivoPos)+"', '"+str(polPositive)+"', '"+str(polNegative)+"')")
 
 		
 	transaccion.append("COMMIT;")
