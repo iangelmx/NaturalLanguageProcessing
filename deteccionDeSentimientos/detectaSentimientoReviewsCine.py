@@ -10,6 +10,7 @@ import numpy
 import sys
 sys.path.insert(0, '../aramirezaNlpLib')
 from iangelmxNlpLib import *
+from mariamysqlib import *
 import numpy as np
 import os
 from sklearn.feature_extraction.text import CountVectorizer
@@ -18,7 +19,15 @@ from sklearn.cross_validation import train_test_split
 dirpath = os.getcwd()
 #"C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\deteccionDeSentimientos"
 rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
-[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100, rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
+rutaCorpusPolaridad = "C:\\Users\\iAngelMx\\Documents\\GitHub\\nlp\\Corpus\\ML-SentiCon"
+
+#transaccion = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100, rutaDiccionarioPolaridad=rutaCorpusPolaridad, polaridad=True)
+#resultado = doTransaction(transaccion) #, traceback=True)
+
+#print(resultado)
+
+[sampleTexts,y] = prepareRawText2Classify(dirpath, tipoRawText = "reviewCine", maxReviews=100)
+
 y=np.asarray(y)
 
 #y<- etiquetas de los textos
