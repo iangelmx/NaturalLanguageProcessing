@@ -54,11 +54,12 @@ def getLemma(wordform, pos):
             pass
     return lemma
                             
-def tagSents(fname):
-    f=open(fname)
-    t=f.read()
-    soup = BeautifulSoup(t, 'lxml')
-    textString = soup.get_text()
+def tagSents(fname, isHtml=True):
+    if isHtml==True:
+        f=open(fname)
+        t=f.read()
+        soup = BeautifulSoup(t, 'lxml')
+        textString = soup.get_text()
     textString=textString.lower()
 
     '''get a list of sentences'''
@@ -81,7 +82,8 @@ def tagSents(fname):
  
 '''test if run as application'''
 if __name__=='__main__':
-    lemmas=lemmatizeTaggedSents('e960401.htm')
+    
+    lemmas=lemmatizeTaggedSents('e960401.htm', isHtml=False)
 
     """entrada = open("salidaFIN.txt", mode="r", encoding="utf-8")
     rawTokens = entrada.read()
