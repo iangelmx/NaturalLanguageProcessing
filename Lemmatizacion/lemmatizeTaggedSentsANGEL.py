@@ -144,7 +144,8 @@ if __name__=='__main__':
     # argumento = sys.argv[1:]
     # cadenaArgumento = ' '.join(argumento)
 
-    archivoIn = open("cadenaGeneralReviewsMoviles.txt", "r")
+    #archivoIn = open("cadenaGeneralReviewsMoviles.txt", "r")
+    archivoIn = open("cadenaGeneralReviewsMovilesNormalizada.txt", "r")
     cadenaArgumento = archivoIn.read()
     
     #input(cadenaArgumento)
