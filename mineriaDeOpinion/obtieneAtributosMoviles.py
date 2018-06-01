@@ -41,3 +41,5 @@ archivo.close()
 
 #os.system("..\\Lemmatizacion\\lemmatizeTaggedSentsANGEL.py "+cadenaGeneral)
 #print("Lo llamó?")
+
+####SELECT DISTINCT lemmaNoun, count(lemmaNoun) FROM `nounsreviewsmoviles` GROUP BY lemmaNoun ORDER BY `count(lemmaNoun)` DESC
