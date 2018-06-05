@@ -24,10 +24,13 @@ def get_top_ngrams(corpus, ngram_val=1, limit=5): #Corpus -> texto como cadena
 
 	ngrams = compute_ngrams(tokens, ngram_val)
 	ngrams_freq_dist = nltk.FreqDist(ngrams)
-	sorted_ngrams_fd = sorted(ngrams_freq_dist.item(), 
+	# print(ngrams_freq_dist)
+	# print(type(ngrams_freq_dist))
+	sorted_ngrams_fd = sorted(ngrams_freq_dist.items(), 
 							key=operator.itemgetter(1), reverse=True)
 	sorted_ngrams = sorted_ngrams_fd[0:limit]
 	sorted_ngrams = [(' '.join(text), freq) for text, freq in sorted_ngrams]
+	return sorted_ngrams
 
 dirpath = os.getcwd()
 
@@ -64,13 +67,17 @@ stop = stopWordsEsp
 cadenaTokens = cadenaGeneral.split()
 doc_complete=[cadenaGeneral]
 #stop_free = " ".join([i for i in cadenaTokens.lower().split() if i not in stop])
-def clean(doc):
-	stop_free = " ".join([i for i in doc.lower().split() if i not in stop])
-	input(stop_free)
+def clean(doc, keepNumbers=False):
+	if keepNumbers == True:
+		stop_free = " ".join([i for i in doc.lower().split() if i not in stop])	
+	else:
+		stop_free = " ".join([i for i in doc.lower().split() if i not in stop and i.isalpha()])
+	#input(stop_free)
 	punc_free = ''.join(ch for ch in stop_free if ch not in exclude)
 	return punc_free
 
-doc_clean = [clean(doc).split() for doc in doc_complete]
+doc_clean = [clean(doc, keepNumbers=True).split() for doc in doc_complete]
+#doc_clean = [clean(doc).split() for doc in doc_complete]
 
 cadena = ""
 
@@ -90,3 +97,7 @@ archivo.close()
 #print("Lo llamó?")
 
 ####SELECT DISTINCT lemmaNoun, count(lemmaNoun) FROM `nounsreviewsmoviles` GROUP BY lemmaNoun ORDER BY `count(lemmaNoun)` DESC
+
+for a in range(1, 6):
+	print (get_top_ngrams(cadena, ngram_val=a, limit=5))
+	print(" ")
